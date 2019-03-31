@@ -2,26 +2,28 @@ package Trackpad.powers;
 
 import Trackpad.actions.SpawnDissipatingMonsterAction;
 import Trackpad.monsters.Reflection;
+import Trackpad.trackpad;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.core.*;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.*;
 
-import Trackpad.Trackpad;
+import java.util.ArrayList;
 
 //Gain 1 dex for the turn for each card played.
 
 public class ReflectionPower extends AbstractPower {
 
-    public static final String POWER_ID = Trackpad.makeID("ReflectionPower");
+    public static final String POWER_ID = trackpad.makeID("ReflectionPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    public static final String IMG = Trackpad.makePath(Trackpad.REFLECTION_POWER);
+    public static final String IMG = trackpad.makePath(trackpad.REFLECTION_POWER);
+    private boolean isPlayerTurn;
+    private ArrayList<Trackpad.actions.SpawnDissipatingMonsterAction> deferredSpawns = new ArrayList();
 
     public ReflectionPower(AbstractCreature owner, int amount) {
         this.name = NAME;
@@ -43,14 +45,37 @@ public class ReflectionPower extends AbstractPower {
         }
     }
 
-
-
     @Override
-    public int onLoseHp(int damageAmount) {
-        if(damageAmount > 0) {
+    public int onAttacked(DamageInfo info, int damageAmount) {
+        if(isPlayerTurn) {
             AbstractDungeon.actionManager.addToBottom(new SpawnDissipatingMonsterAction(new Reflection(damageAmount), false, true));
         }
+        else
+        {
+            deferredSpawns.add(new SpawnDissipatingMonsterAction(new Reflection(damageAmount), false, true));
+        }
         return damageAmount;
+    }
+
+    @Override
+    public void atStartOfTurn() {
+        isPlayerTurn = false;
+    }
+
+    @Override
+    public void atEndOfTurn(boolean isPlayer) {
+        if(!isPlayer)
+        {
+            if(deferredSpawns.size() > 0)
+            {
+                while(deferredSpawns.size() > 0)
+                {
+                    AbstractDungeon.actionManager.addToBottom(deferredSpawns.get(0));
+                    deferredSpawns.remove(0);
+                }
+            }
+            isPlayerTurn = true;
+        }
     }
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))

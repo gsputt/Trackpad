@@ -1,30 +1,26 @@
 package Trackpad.monsters;
 
-import Trackpad.Trackpad;
+import Trackpad.trackpad;
 import Trackpad.powers.ReflectionPower;
 import Trackpad.powers.ShatterPower;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.curses.Pain;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDiscardEffect;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDrawPileEffect;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
 
 public class AccursedMirror extends AbstractMonster {
 
-    public static final String ID = Trackpad.makeID("AccursedMirror");
+    public static final String ID = trackpad.makeID("AccursedMirror");
     public static final MonsterStrings monsterStrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
     public static final String NAME = monsterStrings.NAME;
     public static final String[] MOVES = monsterStrings.MOVES;
     public static final String[] DIALOG = monsterStrings.DIALOG;
-    public static final String IMG = Trackpad.makePath(Trackpad.ACCURSED_MIRROR);
+    public static final String IMG = trackpad.makePath(trackpad.ACCURSED_MIRROR);
 
     private int turnCount = 0;
 

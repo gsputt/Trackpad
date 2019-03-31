@@ -1,27 +1,24 @@
 package Trackpad.powers;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
+import Trackpad.trackpad;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.actions.common.SuicideAction;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.core.*;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.*;
-
-import Trackpad.Trackpad;
 
 //Gain 1 dex for the turn for each card played.
 
 public class DissipatingPower extends AbstractPower {
 
-    public static final String POWER_ID = Trackpad.makeID("DissipatingPower");
+    public static final String POWER_ID = trackpad.makeID("DissipatingPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    public static final String IMG = Trackpad.makePath(Trackpad.DISSIPATING_POWER);
+    public static final String IMG = trackpad.makePath(trackpad.DISSIPATING_POWER);
 
 
     public DissipatingPower(AbstractCreature owner) {
@@ -48,8 +45,7 @@ public class DissipatingPower extends AbstractPower {
     public void atEndOfTurn(boolean isPlayer) {
         if(isPlayer == false)
         {
-            this.owner.currentHealth = 0;
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(this.owner, new DamageInfo(this.owner, 1), AbstractGameAction.AttackEffect.NONE));
+            AbstractDungeon.actionManager.addToBottom(new SuicideAction((AbstractMonster)this.owner));
         }
     }
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))

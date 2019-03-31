@@ -1,5 +1,5 @@
 {
-  "Trackpad:AccursedMirror": {
+  "trackpad:AccursedMirror": {
   "MOVES":[
     "Blinding Glare",
     "Glass Shards"
@@ -7,7 +7,7 @@
   "NAME": "Accursed Mirror",
   "DIALOG": []
 },
-  "Trackpad:Reflection": {
+  "trackpad:Reflection": {
     "MOVES":[
       "Reflected Strike"
     ],

@@ -1,21 +1,21 @@
 {
-"Trackpad:SpellAttack": {
+"trackpad:SpellAttack": {
         "NAME": "Effect: Thunder",
         "DESCRIPTIONS": ["Your next spell cast will deal #b", " damage."]
 },
-"Trackpad:SpellBlock": {
+"trackpad:SpellBlock": {
   "NAME": "Effect: Freeze",
   "DESCRIPTIONS": ["Your next spell cast will give you #b", " #yBlock."]
 },
-  "Trackpad:ShatterPower": {
+  "trackpad:ShatterPower": {
     "NAME": "Shatter",
     "DESCRIPTIONS": ["Each time a Reflection dies, this enemy gains 1 thorns. If this enemy goes 3 turns without losing HP, It spawns a reflection that deals 15 damage."]
   },
-  "Trackpad:ReflectionPower": {
+  "trackpad:ReflectionPower": {
     "NAME": "Reflection",
     "DESCRIPTIONS": ["Upon losing HP, spawns a Reflection that intends to attack for damage equal to HP lost."]
   },
-  "Trackpad:DissipatingPower": {
+  "trackpad:DissipatingPower": {
     "NAME": "Dissipating",
     "DESCRIPTIONS": ["Dies after 1 turn."]
   }

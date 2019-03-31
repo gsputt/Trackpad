@@ -1,12 +1,11 @@
 package Trackpad.monsters;
 
-import Trackpad.Trackpad;
+import Trackpad.trackpad;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -19,12 +18,12 @@ import com.megacrit.cardcrawl.vfx.combat.SmallLaserEffect;
 
 public class Reflection extends AbstractMonster {
 
-    public static final String ID = Trackpad.makeID("Reflection");
+    public static final String ID = trackpad.makeID("Reflection");
     public static final MonsterStrings monsterStrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
     public static final String NAME = monsterStrings.NAME;
     public static final String[] MOVES = monsterStrings.MOVES;
     public static final String[] DIALOG = monsterStrings.DIALOG;
-    public static final String IMG = Trackpad.makePath(Trackpad.REFLECTION);
+    public static final String IMG = trackpad.makePath(trackpad.REFLECTION);
     public static int count = 0;
 
 

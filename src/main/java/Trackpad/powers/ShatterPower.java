@@ -2,7 +2,7 @@ package Trackpad.powers;
 
 import Trackpad.actions.SpawnDissipatingMonsterAction;
 import Trackpad.monsters.Reflection;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import Trackpad.trackpad;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.localization.PowerStrings;
@@ -11,17 +11,15 @@ import com.megacrit.cardcrawl.core.*;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.*;
 
-import Trackpad.Trackpad;
-
 //Gain 1 dex for the turn for each card played.
 
 public class ShatterPower extends AbstractPower {
 
-    public static final String POWER_ID = Trackpad.makeID("ShatterPower");
+    public static final String POWER_ID = trackpad.makeID("ShatterPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    public static final String IMG = Trackpad.makePath(Trackpad.SHATTER_POWER);
+    public static final String IMG = trackpad.makePath(trackpad.SHATTER_POWER);
 
 
     public ShatterPower(AbstractCreature owner, int amount) {
@@ -45,10 +43,8 @@ public class ShatterPower extends AbstractPower {
     }
 
     @Override
-    public int onLoseHp(int damageAmount) {
-        if(damageAmount > 0) {
-            this.amount = 1;
-        }
+    public int onAttacked(DamageInfo info, int damageAmount) {
+        this.amount = 1;
         return damageAmount;
     }
 

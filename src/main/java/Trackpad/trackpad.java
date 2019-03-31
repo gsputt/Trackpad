@@ -17,13 +17,13 @@ import org.apache.logging.log4j.Logger;
 
 
 @SpireInitializer
-public class Trackpad implements
+public class trackpad implements
         PostInitializeSubscriber, EditCardsSubscriber, EditStringsSubscriber,
         EditRelicsSubscriber, EditKeywordsSubscriber
         {
     //PrePlayerUpdateSubscriber, OnReceivePowerPower
 
-    public static final Logger logger = LogManager.getLogger(Trackpad.class.getName());
+    public static final Logger logger = LogManager.getLogger(trackpad.class.getName());
 
     //MOD SETTINGS PANEL
     private static final String MODNAME = "Trackpad";
@@ -102,7 +102,7 @@ public class Trackpad implements
 
     // =============== SUBSCRIBE, CREATE THE COLOR, INITIALIZE =================
 
-    public Trackpad() {
+    public trackpad() {
         logger.info("Subscribe to BaseMod hooks");
 
         BaseMod.subscribe(this);
@@ -113,9 +113,9 @@ public class Trackpad implements
 
     @SuppressWarnings("unused")
     public static void initialize() {
-        logger.info("Initializing Trackpad Mod. Feed Cookies to continue");
-        Trackpad The_Scribe = new Trackpad();
-        logger.info(" Trackpad Mod Initialized - Cookies have been fed");
+        logger.info("Initializing trackpad Mod. Feed Cookies to continue");
+        trackpad The_Scribe = new trackpad();
+        logger.info(" trackpad Mod Initialized - Cookies have been fed");
 
     }
 
@@ -246,7 +246,7 @@ public class Trackpad implements
         // Create the Mod Menu
         ModPanel settingsPanel = new ModPanel();
 
-            settingsPanel.addUIElement(new ModLabel("Trackpad doesn't have any settings!", 400.0f, 700.0f,
+            settingsPanel.addUIElement(new ModLabel("trackpad doesn't have any settings!", 400.0f, 700.0f,
                     settingsPanel, (me) -> {
             }));
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
@@ -265,7 +265,7 @@ public class Trackpad implements
     // this adds "ModName:" before the ID of any card/relic/power etc.
     // in order to avoid conflicts if any other mod uses the same ID.
     public static String makeID(String idText) {
-        return "Trackpad:" + idText;
+        return "trackpad:" + idText;
     }
 
 }
