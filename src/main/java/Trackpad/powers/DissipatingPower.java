@@ -1,8 +1,11 @@
 package Trackpad.powers;
 
 import Trackpad.trackpad;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.common.SuicideAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.core.*;
@@ -45,7 +48,8 @@ public class DissipatingPower extends AbstractPower {
     public void atEndOfTurn(boolean isPlayer) {
         if(isPlayer == false)
         {
-            AbstractDungeon.actionManager.addToBottom(new SuicideAction((AbstractMonster)this.owner));
+            this.owner.currentHealth = 0;
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(this.owner,new DamageInfo(this.owner, 0), AbstractGameAction.AttackEffect.NONE));
         }
     }
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
