@@ -9,11 +9,11 @@
 },
   "Trackpad:ShatterPower": {
     "NAME": "Shatter",
-    "DESCRIPTIONS": ["For each 20 HP this enemy is missing, it gains 1 thorns."]
+    "DESCRIPTIONS": ["Each time a Reflection dies, this enemy gains 1 thorns. If this enemy goes 3 turns without losing HP, It spawns a reflection that deals 15 damage."]
   },
   "Trackpad:ReflectionPower": {
     "NAME": "Reflection",
-    "DESCRIPTIONS": ["After this enemy is attacked, it summons a Reflection that deals that damage instance as its intent. Reflections die after 1 turn."]
+    "DESCRIPTIONS": ["Upon losing HP, spawns a Reflection that intends to attack for damage equal to HP lost."]
   },
   "Trackpad:DissipatingPower": {
     "NAME": "Dissipating",

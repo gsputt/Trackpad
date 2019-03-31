@@ -1,5 +1,7 @@
 package Trackpad.powers;
 
+import Trackpad.actions.SpawnDissipatingMonsterAction;
+import Trackpad.monsters.Reflection;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -21,7 +23,6 @@ public class ShatterPower extends AbstractPower {
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     public static final String IMG = Trackpad.makePath(Trackpad.SHATTER_POWER);
 
-    private static int healthTreshold;
 
     public ShatterPower(AbstractCreature owner, int amount) {
         this.name = NAME;
@@ -33,7 +34,6 @@ public class ShatterPower extends AbstractPower {
         this.isTurnBased = true;
         this.img = new Texture(IMG);
         this.canGoNegative = false;
-        healthTreshold = this.owner.maxHealth;
     }
 
     public void stackPower(int stackAmount) {
@@ -45,13 +45,28 @@ public class ShatterPower extends AbstractPower {
     }
 
     @Override
-    public int onAttacked(DamageInfo info, int damageAmount) {
-        if(this.owner.currentHealth < healthTreshold)
-        {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new ThornsPower(this.owner, 1), 1));
-            healthTreshold -= 20;
+    public int onLoseHp(int damageAmount) {
+        if(damageAmount > 0) {
+            this.amount = 1;
         }
         return damageAmount;
+    }
+
+    @Override
+    public void atStartOfTurn() {
+        this.amount++;
+    }
+
+    @Override
+    public void atEndOfTurn(boolean isPlayer) {
+        if(!isPlayer)
+        {
+            if(this.amount >= 4)
+            {
+                AbstractDungeon.actionManager.addToBottom(new SpawnDissipatingMonsterAction(new Reflection(15), false, true));
+                this.amount = 1;
+            }
+        }
     }
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))

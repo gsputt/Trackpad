@@ -5,6 +5,7 @@ import Trackpad.powers.ReflectionPower;
 import Trackpad.powers.ShatterPower;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.curses.Pain;
@@ -62,8 +63,7 @@ public class AccursedMirror extends AbstractMonster {
                         new com.megacrit.cardcrawl.actions.common.GainBlockAction(this, this, this.BlockGain));
                 break;
             case 2:
-                AbstractCard c = new Pain();
-                AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(c, true, false));
+                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Pain(), 1, true, true));
                 break;
         }
         AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
@@ -71,7 +71,7 @@ public class AccursedMirror extends AbstractMonster {
 
     @Override
     protected void getMove(int num) {
-        if(turnCount%3 == 0)
+        if(turnCount%3 == 0 && turnCount != 0)
         {
             this.setMove(MOVES[1], (byte) 2, Intent.STRONG_DEBUFF);
         }

@@ -4,6 +4,7 @@ import Trackpad.Trackpad;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
@@ -12,6 +13,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.ThornsPower;
 import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.SmallLaserEffect;
 
@@ -53,5 +55,17 @@ public class Reflection extends AbstractMonster {
     public void die() {
         this.die(true);
         count--;
+
+        AbstractMonster targetMonster;
+        int i = 0;
+        while(i < AbstractDungeon.getCurrRoom().monsters.monsters.size())
+        {
+            targetMonster = AbstractDungeon.getCurrRoom().monsters.monsters.get(i);
+            if(targetMonster.id.equals(AccursedMirror.ID))
+
+            {AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(targetMonster, targetMonster, new ThornsPower(targetMonster, 1), 1));
+            }
+            i++;
+        }
     }
 }
