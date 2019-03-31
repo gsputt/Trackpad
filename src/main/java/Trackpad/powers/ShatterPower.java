@@ -44,7 +44,9 @@ public class ShatterPower extends AbstractPower {
 
     @Override
     public int onAttacked(DamageInfo info, int damageAmount) {
-        this.amount = 1;
+        if(damageAmount > 0) {
+            this.amount = 1;
+        }
         return damageAmount;
     }
 

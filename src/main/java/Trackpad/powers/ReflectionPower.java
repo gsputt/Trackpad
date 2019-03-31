@@ -47,12 +47,12 @@ public class ReflectionPower extends AbstractPower {
 
     @Override
     public int onAttacked(DamageInfo info, int damageAmount) {
-        if(isPlayerTurn) {
-            AbstractDungeon.actionManager.addToBottom(new SpawnDissipatingMonsterAction(new Reflection(damageAmount), false, true));
-        }
-        else
-        {
-            deferredSpawns.add(new SpawnDissipatingMonsterAction(new Reflection(damageAmount), false, true));
+        if(damageAmount > 0) {
+            if (isPlayerTurn) {
+                AbstractDungeon.actionManager.addToBottom(new SpawnDissipatingMonsterAction(new Reflection(damageAmount), false, true));
+            } else {
+                deferredSpawns.add(new SpawnDissipatingMonsterAction(new Reflection(damageAmount), false, true));
+            }
         }
         return damageAmount;
     }
