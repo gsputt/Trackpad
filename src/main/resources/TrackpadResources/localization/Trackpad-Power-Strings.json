@@ -1,0 +1,14 @@
+{
+"Trackpad:SpellAttack": {
+        "NAME": "Effect: Thunder",
+        "DESCRIPTIONS": ["Your next spell cast will deal #b", " damage."]
+},
+"Trackpad:SpellBlock": {
+  "NAME": "Effect: Freeze",
+  "DESCRIPTIONS": ["Your next spell cast will give you #b", " #yBlock."]
+},
+  "Trackpad:ShatterPower": {
+    "NAME": "Shatter",
+    "DESCRIPTIONS": ["For each 20 HP this enemy is missing, it gains 1 thorns."]
+  }
+}

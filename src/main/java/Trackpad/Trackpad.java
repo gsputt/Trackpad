@@ -1,0 +1,258 @@
+package Trackpad;
+
+import basemod.BaseMod;
+import basemod.ModLabel;
+import basemod.ModPanel;
+import basemod.interfaces.*;
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
+import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
+import com.megacrit.cardcrawl.helpers.CardHelper;
+import com.megacrit.cardcrawl.localization.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+
+@SpireInitializer
+public class Trackpad implements
+        PostInitializeSubscriber, EditCardsSubscriber, EditStringsSubscriber,
+        EditRelicsSubscriber, EditKeywordsSubscriber
+        {
+    //PrePlayerUpdateSubscriber, OnReceivePowerPower
+
+    public static final Logger logger = LogManager.getLogger(Trackpad.class.getName());
+
+    //MOD SETTINGS PANEL
+    private static final String MODNAME = "Trackpad";
+    private static final String AUTHOR = "Left Click, ComingVirus";
+    private static final String DESCRIPTION = "A general expansion mod.";
+    //MOD SETTINGS PANEL
+
+    // =============== INPUT TEXTURE LOCATION =================
+
+    // Potion Colors in RGB
+    public static final Color PLACEHOLDER_POTION_LIQUID = CardHelper.getColor(209.0f, 53.0f, 18.0f); // Orange-ish Red
+    public static final Color PLACEHOLDER_POTION_HYBRID = CardHelper.getColor(255.0f, 230.0f, 230.0f); // Near White
+    public static final Color PLACEHOLDER_POTION_SPOTS = CardHelper.getColor(100.0f, 25.0f, 10.0f); // Super Dark Red/Brown
+
+    // Image folder name - This is where your image folder is.
+    // This is good practice in case you ever need to move/rename it without screwing up every single path.
+    // In this case, it's resources/TrackpadResources/images (and then, say, /cards/Strike.png).
+
+    private static final String TRACKPAD_MOD_ASSETS_FOLDER = "TrackpadResources/images";
+
+    // Card backgrounds
+    /*private static final String ATTACK_TRACKPAD_BLUE = "512/bg_attack_scribe_blue.png";
+    private static final String POWER_TRACKPAD_BLUE = "512/bg_power_scribe_blue.png";
+    private static final String SKILL_TRACKPAD_BLUE = "512/bg_skill_scribe_blue.png";
+    private static final String ENERGY_ORB_TRACKPAD_BLUE = "512/card_scribe_blue_orb.png";
+    private static final String CARD_ENERGY_ORB = "512/card_small_orb.png";
+
+    private static final String ATTACK_TRACKPAD_BLUE_PORTRAIT = "1024/bg_attack_scribe_blue.png";
+    private static final String POWER_TRACKPAD_BLUE_PORTRAIT = "1024/bg_power_scribe_blue.png";
+    private static final String SKILL_TRACKPAD_BLUE_PORTRAIT = "1024/bg_skill_scribe_blue.png";
+    private static final String ENERGY_ORB_TRACKPAD_BLUE_PORTRAIT = "1024/card_scribe_blue_orb.png";
+    */
+
+    // Card images
+    //public static final String SCRIBE_STARTER_ATTACK = "cards/Strike.png";
+
+    // Power images
+    //public static final String COMMON_POWER = "powers/placeholder_power.png";
+    public static final String SHATTER_POWER = "powers/ShatterPower.png";
+
+
+    // Relic images
+    public static final String PLACEHOLDER_RELIC_2 = "relics/placeholder_relic2.png";
+    public static final String PLACEHOLDER_RELIC_OUTLINE_2 = "relics/outline/placeholder_relic2.png";
+
+
+    //Custom VFX
+
+
+    //Mod Badge
+    public static final String BADGE_IMAGE = "Badge.png";
+
+    // =============== /INPUT TEXTURE LOCATION/ =================
+
+    // =============== IMAGE PATHS =================
+
+    // This is the command that will link up your core assets folder (line 89) ("TrackpadResources/images")
+    // together with the card image (everything above) ("cards/Attack.png") and it puts a "/" between them.
+    // When adding a card image, you can, in fact, just do "TrackpadResources/images/cards/Attack.png" in the actual card file.
+    // This however, is good practice in case you want to change your "/images" folder at any point in time.
+
+    /**
+     * @param resource the resource, must *NOT* have a leading "/"
+     * @return the full path
+     */
+    public static final String makePath(String resource) {
+        return TRACKPAD_MOD_ASSETS_FOLDER + "/" + resource;
+    }
+
+    // =============== /IMAGE PATHS/ =================
+
+    // =============== SUBSCRIBE, CREATE THE COLOR, INITIALIZE =================
+
+    public Trackpad() {
+        logger.info("Subscribe to BaseMod hooks");
+
+        BaseMod.subscribe(this);
+
+        logger.info("Done subscribing");
+
+    }
+
+    @SuppressWarnings("unused")
+    public static void initialize() {
+        logger.info("Initializing Trackpad Mod. Feed Cookies to continue");
+        Trackpad The_Scribe = new Trackpad();
+        logger.info(" Trackpad Mod Initialized - Cookies have been fed");
+
+    }
+
+    // ============== /SUBSCRIBE, CREATE THE COLOR, INITIALIZE/ =================
+
+
+    // ================ ADD CARDS ===================
+
+    @Override
+    public void receiveEditCards() {
+        logger.info("Adding variables");
+        // Add the Custom Dynamic Variables
+
+        //BaseMod.addDynamicVariable(new StrikeLightning());
+
+
+        logger.info("Adding cards");
+        // Add the cards
+        /*
+        BaseMod.addCard(new DefaultCommonPower());
+        BaseMod.addCard(new DefaultUncommonSkill());
+        BaseMod.addCard(new DefaultUncommonAttack());
+        BaseMod.addCard(new DefaultUncommonPower());
+        BaseMod.addCard(new DefaultRareAttack());
+        BaseMod.addCard(new DefaultRareSkill());
+        BaseMod.addCard(new DefaultRarePower());*/
+
+        logger.info("Making sure the cards are unlocked.");
+        // Unlock the cards
+        /*UnlockTracker.unlockCard(DefaultAttackWithVariable.ID);
+        UnlockTracker.unlockCard(StarterDefend.ID);
+        UnlockTracker.unlockCard(DefaultCommonPower.ID);
+        UnlockTracker.unlockCard(DefaultUncommonSkill.ID);
+        UnlockTracker.unlockCard(DefaultUncommonAttack.ID);
+        UnlockTracker.unlockCard(DefaultUncommonPower.ID);
+        UnlockTracker.unlockCard(DefaultRareAttack.ID);
+        UnlockTracker.unlockCard(DefaultRareSkill.ID);
+        UnlockTracker.unlockCard(DefaultRarePower.ID);*/
+
+        logger.info("Done adding cards!");
+    }
+
+    // ================ /ADD CARDS/ ===================
+
+    // ================ ADD POTIONS ===================
+
+
+    public void receiveEditPotions() {
+        logger.info("Beginning to edit potions");
+
+        // Class Specific Potion. If you want your potion to not be class-specific, just remove the player class at the end (in this case the "TheScribeEnum.THE_SCRIBE")
+        //BaseMod.addPotion(PlaceholderPotion.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, PlaceholderPotion.POTION_ID, TheScribeEnum.THE_SCRIBE);
+
+        logger.info("Done editing potions");
+    }
+
+    // ================ /ADD POTIONS/ ===================
+
+
+    // ================ ADD RELICS ===================
+
+    @Override
+    public void receiveEditRelics() {
+        logger.info("Adding relics");
+
+        // This adds a character specific relic. Only when you play with the mentioned color, will you get this relic.
+        //BaseMod.addRelicToCustomPool(new StarterRelic2(), AbstractCardEnum.SCRIBE_BLUE);
+        // This adds a relic to the Shared pool. Every character can find this relic.
+        //BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);
+
+        logger.info("Done adding relics!");
+    }
+
+    // ================ /ADD RELICS/ ===================
+
+    // ================ LOAD THE TEXT ===================
+
+    @Override
+    public void receiveEditStrings() {
+        logger.info("Beginning to edit strings");
+
+        // CardStrings
+        BaseMod.loadCustomStringsFile(CardStrings.class,
+                "TrackpadResources/localization/Trackpad-Card-Strings.json");
+
+        // PowerStrings
+        BaseMod.loadCustomStringsFile(PowerStrings.class,
+                "TrackpadResources/localization/Trackpad-Power-Strings.json");
+
+        // RelicStrings
+        BaseMod.loadCustomStringsFile(RelicStrings.class,
+                "TrackpadResources/localization/Trackpad-Relic-Strings.json");
+
+        // PotionStrings
+        BaseMod.loadCustomStringsFile(PotionStrings.class,
+                "TrackpadResources/localization/Trackpad-Potion-Strings.json");
+
+        BaseMod.loadCustomStringsFile(MonsterStrings.class,
+                "TrackpadResources/localization/Trackpad-Monster-Strings.json");
+
+        logger.info("Done editting strings");
+    }
+
+    // ================ /LOAD THE TEXT/ ===================
+
+    // ================ LOAD THE KEYWORDS ===================
+
+    @Override
+    public void receiveEditKeywords() {
+        /*
+        final String[] Cast = { "Cast", "casts", "cast"};
+        BaseMod.addKeyword("scribe", "Cast", Cast, "Use up all your stored Spell Effects and Spell Modifiers to cause effects. Additionally causes Scribed Scrolls to stop being added to your hand until another Spell Effect is played.");
+        */
+    }
+
+    // ================ /LOAD THE KEYWORDS/ ===================
+
+    // =============== POST-INITIALIZE =================
+
+
+    @Override
+    public void receivePostInitialize() {
+
+        logger.info("Loading badge image and mod options");
+        // Load the Mod Badge
+        Texture badgeTexture = new Texture(makePath(BADGE_IMAGE));
+
+        // Create the Mod Menu
+        ModPanel settingsPanel = new ModPanel();
+
+            settingsPanel.addUIElement(new ModLabel("Trackpad doesn't have any settings!", 400.0f, 700.0f,
+                    settingsPanel, (me) -> {
+            }));
+        BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
+
+        logger.info("Done loading badge Image and mod options");
+
+    }
+
+    // =============== / POST-INITIALIZE/ =================
+
+    // this adds "ModName:" before the ID of any card/relic/power etc.
+    // in order to avoid conflicts if any other mod uses the same ID.
+    public static String makeID(String idText) {
+        return "Trackpad:" + idText;
+    }
+
+}
