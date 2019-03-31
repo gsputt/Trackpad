@@ -6,10 +6,15 @@ import Trackpad.powers.ShatterPower;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.curses.Pain;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDiscardEffect;
+import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDrawPileEffect;
+import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
 
 public class AccursedMirror extends AbstractMonster {
 
@@ -18,11 +23,14 @@ public class AccursedMirror extends AbstractMonster {
     public static final String NAME = monsterStrings.NAME;
     public static final String[] MOVES = monsterStrings.MOVES;
     public static final String[] DIALOG = monsterStrings.DIALOG;
+    public static final String IMG = Trackpad.makePath(Trackpad.ACCURSED_MIRROR);
+
+    private int turnCount = 0;
 
     private int BlockGain;
 
     public AccursedMirror() {
-        super(NAME, ID, 80, -0.0F, -10.0F, 160f, 300f, null);
+        super(NAME, ID, 80, 0.0F, 0.0F, 205f, 250f, IMG);
         if (AbstractDungeon.ascensionLevel >= 8) {
             this.setHp(100);
         }
@@ -35,6 +43,8 @@ public class AccursedMirror extends AbstractMonster {
         } else {
             this.BlockGain = 6;
         }
+        Reflection.count = 0;
+        turnCount = 0;
     }
     @Override
     public void usePreBattleAction() {
@@ -45,10 +55,15 @@ public class AccursedMirror extends AbstractMonster {
 
     @Override
     public void takeTurn() {
+        turnCount++;
         switch(this.nextMove) {
             case 1:
                 AbstractDungeon.actionManager.addToBottom(
                         new com.megacrit.cardcrawl.actions.common.GainBlockAction(this, this, this.BlockGain));
+                break;
+            case 2:
+                AbstractCard c = new Pain();
+                AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(c, true, false));
                 break;
         }
         AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
@@ -56,7 +71,14 @@ public class AccursedMirror extends AbstractMonster {
 
     @Override
     protected void getMove(int num) {
-        this.setMove(MOVES[0], (byte) 1, Intent.DEFEND);
+        if(turnCount%3 == 0)
+        {
+            this.setMove(MOVES[1], (byte) 2, Intent.STRONG_DEBUFF);
+        }
+        else
+        {
+            this.setMove(MOVES[0], (byte) 1, Intent.DEFEND);
+        }
     }
 
 }

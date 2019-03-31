@@ -5,5 +5,12 @@
   ],
   "NAME": "Accursed Mirror",
   "DIALOG": []
-}
+},
+  "Trackpad:Reflection": {
+    "MOVES":[
+      "Reflected Strike"
+    ],
+    "NAME": "Reflection",
+    "DIALOG": []
+  }
 }

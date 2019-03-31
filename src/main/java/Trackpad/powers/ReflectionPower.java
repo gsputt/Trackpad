@@ -1,11 +1,14 @@
 package Trackpad.powers;
 
+import Trackpad.actions.SpawnDissipatingMonsterAction;
+import Trackpad.monsters.Reflection;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.core.*;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.*;
 
 import Trackpad.Trackpad;
@@ -14,13 +17,11 @@ import Trackpad.Trackpad;
 
 public class ReflectionPower extends AbstractPower {
 
-    public static final String POWER_ID = Trackpad.makeID("ShatterPower");
+    public static final String POWER_ID = Trackpad.makeID("ReflectionPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    public static final String IMG = Trackpad.makePath(Trackpad.SHATTER_POWER);
-
-    private static int healthTreshold;
+    public static final String IMG = Trackpad.makePath(Trackpad.REFLECTION_POWER);
 
     public ReflectionPower(AbstractCreature owner, int amount) {
         this.name = NAME;
@@ -32,7 +33,6 @@ public class ReflectionPower extends AbstractPower {
         this.isTurnBased = true;
         this.img = new Texture(IMG);
         this.canGoNegative = false;
-        healthTreshold = this.owner.maxHealth;
     }
 
     public void stackPower(int stackAmount) {
@@ -45,7 +45,7 @@ public class ReflectionPower extends AbstractPower {
 
     @Override
     public int onAttacked(DamageInfo info, int damageAmount) {
-
+        AbstractDungeon.actionManager.addToBottom(new SpawnDissipatingMonsterAction(new Reflection(info.base), false, true));
         return damageAmount;
     }
 

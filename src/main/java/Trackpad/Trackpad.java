@@ -1,5 +1,6 @@
 package Trackpad;
 
+import Trackpad.monsters.AccursedMirror;
 import basemod.BaseMod;
 import basemod.ModLabel;
 import basemod.ModPanel;
@@ -7,8 +8,10 @@ import basemod.interfaces.*;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
+import com.megacrit.cardcrawl.dungeons.Exordium;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.monsters.MonsterInfo;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -60,12 +63,17 @@ public class Trackpad implements
     // Power images
     //public static final String COMMON_POWER = "powers/placeholder_power.png";
     public static final String SHATTER_POWER = "powers/ShatterPower.png";
+    public static final String DISSIPATING_POWER = "powers/DissipatingPower.png";
+    public static final String REFLECTION_POWER = "powers/ReflectionPower.png";
 
 
     // Relic images
     public static final String PLACEHOLDER_RELIC_2 = "relics/placeholder_relic2.png";
     public static final String PLACEHOLDER_RELIC_OUTLINE_2 = "relics/outline/placeholder_relic2.png";
 
+    //Monster images
+    public static final String ACCURSED_MIRROR = "monsters/AccursedMirror.png";
+    public static final String REFLECTION = "monsters/Reflection.png";
 
     //Custom VFX
 
@@ -244,6 +252,11 @@ public class Trackpad implements
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
 
         logger.info("Done loading badge Image and mod options");
+
+        logger.info("Adding Encounters");
+        BaseMod.addMonster(AccursedMirror.ID, () -> new AccursedMirror());
+        BaseMod.addEliteEncounter(Exordium.ID, new MonsterInfo(AccursedMirror.ID, 20));
+        logger.info("Done Adding Encounters");
 
     }
 
