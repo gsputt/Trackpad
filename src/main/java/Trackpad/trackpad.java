@@ -1,17 +1,18 @@
 package Trackpad;
 
-import Trackpad.monsters.AccursedMirror;
+import Trackpad.relics.DisasterInABottle;
+import Trackpad.relics.PocketGalaxy;
+import Trackpad.relics.WondrousWand;
 import basemod.BaseMod;
 import basemod.ModLabel;
 import basemod.ModPanel;
+import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
-import com.megacrit.cardcrawl.dungeons.Exordium;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.*;
-import com.megacrit.cardcrawl.monsters.MonsterInfo;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -70,6 +71,12 @@ public class trackpad implements
     // Relic images
     public static final String PLACEHOLDER_RELIC_2 = "relics/placeholder_relic2.png";
     public static final String PLACEHOLDER_RELIC_OUTLINE_2 = "relics/outline/placeholder_relic2.png";
+    public static final String POCKET_GALAXY = "relics/PocketGalaxy.png";
+    public static final String POCKET_GALAXY_OUTLINE = "relics/outline/PocketGalaxyOutline.png";
+    public static final String WONDROUS_WAND = "relics/WondrousWand.png";
+    public static final String WONDROUS_WAND_OUTLINE = "relics/outline/WondrousWandOutline.png";
+    public static final String DISASTER_IN_A_BOTTLE = "relics/DisasterInABottle.png";
+    public static final String DISASTER_IN_A_BOTTLE_OUTLINE = "relics/outline/DisasterInABottleOutline.png";
 
     //Monster images
     public static final String ACCURSED_MIRROR = "monsters/AccursedMirror.png";
@@ -181,6 +188,9 @@ public class trackpad implements
     public void receiveEditRelics() {
         logger.info("Adding relics");
 
+        BaseMod.addRelic(new PocketGalaxy(), RelicType.SHARED);
+        BaseMod.addRelic(new WondrousWand(), RelicType.SHARED);
+        BaseMod.addRelic(new DisasterInABottle(), RelicType.SHARED);
         // This adds a character specific relic. Only when you play with the mentioned color, will you get this relic.
         //BaseMod.addRelicToCustomPool(new StarterRelic2(), AbstractCardEnum.SCRIBE_BLUE);
         // This adds a relic to the Shared pool. Every character can find this relic.
@@ -252,12 +262,6 @@ public class trackpad implements
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
 
         logger.info("Done loading badge Image and mod options");
-
-        logger.info("Adding Encounters");
-        BaseMod.addMonster(AccursedMirror.ID, () -> new AccursedMirror());
-        BaseMod.addEliteEncounter(Exordium.ID, new MonsterInfo(AccursedMirror.ID, 20));
-        logger.info("Done Adding Encounters");
-
     }
 
     // =============== / POST-INITIALIZE/ =================

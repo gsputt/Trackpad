@@ -6,17 +6,5 @@
 "trackpad:SpellBlock": {
   "NAME": "Effect: Freeze",
   "DESCRIPTIONS": ["Your next spell cast will give you #b", " #yBlock."]
-},
-  "trackpad:ShatterPower": {
-    "NAME": "Shatter",
-    "DESCRIPTIONS": ["If this enemy goes 2 turns without losing HP, It spawns a reflection that deals 15 damage."]
-  },
-  "trackpad:ReflectionPower": {
-    "NAME": "Reflection",
-    "DESCRIPTIONS": ["Upon losing HP, spawns a Reflection that intends to attack for damage equal to HP lost."]
-  },
-  "trackpad:DissipatingPower": {
-    "NAME": "Dissipating",
-    "DESCRIPTIONS": ["Dies after 1 turn."]
-  }
+}
 }

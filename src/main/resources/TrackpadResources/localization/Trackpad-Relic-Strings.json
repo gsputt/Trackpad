@@ -1,4 +1,28 @@
 {
+	"trackpad:PocketGalaxy": {
+		"NAME": "Pocket Galaxy",
+		"FLAVOR": "A galaxy in the palm of your hand.",
+		"DESCRIPTIONS": [
+			"Whenever you discard a card, shuffle a random card into your draw pile. It costs 1 less."
+		]
+	},
+	"trackpad:WondrousWand": {
+		"NAME": "Wondrous Wand",
+		"FLAVOR": "Free Magic.",
+		"DESCRIPTIONS": [
+			"Draw an extra card at the start of combat. It costs 0 this turn."
+		]
+	},
+	"trackpad:DisasterInABottle": {
+		"NAME": "Disaster in a Bottle",
+		"FLAVOR": "Bottled Disasters are almost cute.",
+		"DESCRIPTIONS": [
+			"Upon pickup, choose a card. When you play that card, deal 10 damage to ALL enemies.",
+			"Choose a card for ",
+			" will deal 10 damage to ALL enemies when played."
+		]
+	},
+
 	"trackpad:StarterRelic1": {
 		"NAME": "Spell Scribe's Scroll",
 		"FLAVOR": "Inscribed with an \"S\" it radiates arcane energies.",
@@ -13,4 +37,5 @@
 			"Adds 1 Scribed Spell to your hand at the start of every odd turn. NL Scribed Spells are used for casting spells created with #yscribe:Spell_Effects and #yscribe:Spell_Modifiers."
 		]
 	}
+
 }
