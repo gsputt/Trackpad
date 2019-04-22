@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -57,14 +58,16 @@ public class Reflection extends AbstractMonster {
 
         AbstractMonster targetMonster;
         int i = 0;
-        while(i < AbstractDungeon.getCurrRoom().monsters.monsters.size())
-        {
-            targetMonster = AbstractDungeon.getCurrRoom().monsters.monsters.get(i);
-            if(targetMonster.id.equals(AccursedMirror.ID))
-
-            {AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(targetMonster, targetMonster, new ThornsPower(targetMonster, 1), 1));
+        boolean stop = false;
+        if(count > 5) {
+            while (i < AbstractDungeon.getCurrRoom().monsters.monsters.size()) {
+                targetMonster = AbstractDungeon.getCurrRoom().monsters.monsters.get(i);
+                if (targetMonster.id.equals(Reflection.ID)) {
+                    if(targetMonster.drawX < this.drawX)
+                        targetMonster.drawX += 200F;
+                    }
+                i++;
             }
-            i++;
         }
     }
 }

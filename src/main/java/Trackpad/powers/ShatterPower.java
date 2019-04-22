@@ -59,7 +59,7 @@ public class ShatterPower extends AbstractPower {
     public void atEndOfTurn(boolean isPlayer) {
         if(!isPlayer)
         {
-            if(this.amount >= 4)
+            if(this.amount >= 3)
             {
                 AbstractDungeon.actionManager.addToBottom(new SpawnDissipatingMonsterAction(new Reflection(15), false, true));
                 this.amount = 1;

@@ -49,7 +49,7 @@ public class DissipatingPower extends AbstractPower {
         if(isPlayer == false)
         {
             this.owner.currentHealth = 0;
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(this.owner,new DamageInfo(this.owner, 0), AbstractGameAction.AttackEffect.NONE));
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(this.owner,new DamageInfo(this.owner, 5), AbstractGameAction.AttackEffect.NONE));
         }
     }
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))

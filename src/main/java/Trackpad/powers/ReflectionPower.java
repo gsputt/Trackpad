@@ -22,7 +22,7 @@ public class ReflectionPower extends AbstractPower {
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     public static final String IMG = trackpad.makePath(trackpad.REFLECTION_POWER);
-    private boolean isPlayerTurn;
+    private boolean isPlayerTurn = true;
     private ArrayList<Trackpad.actions.SpawnDissipatingMonsterAction> deferredSpawns = new ArrayList();
 
     public ReflectionPower(AbstractCreature owner, int amount) {
@@ -35,6 +35,7 @@ public class ReflectionPower extends AbstractPower {
         this.isTurnBased = true;
         this.img = new Texture(IMG);
         this.canGoNegative = false;
+        isPlayerTurn = true;
     }
 
     public void stackPower(int stackAmount) {
@@ -48,7 +49,7 @@ public class ReflectionPower extends AbstractPower {
     @Override
     public int onAttacked(DamageInfo info, int damageAmount) {
         if(damageAmount > 0) {
-            if (isPlayerTurn) {
+            if (isPlayerTurn && !AbstractDungeon.player.endTurnQueued) {
                 AbstractDungeon.actionManager.addToBottom(new SpawnDissipatingMonsterAction(new Reflection(damageAmount), false, true));
             } else {
                 deferredSpawns.add(new SpawnDissipatingMonsterAction(new Reflection(damageAmount), false, true));

@@ -9,7 +9,7 @@
 },
   "trackpad:ShatterPower": {
     "NAME": "Shatter",
-    "DESCRIPTIONS": ["Each time a Reflection dies, this enemy gains 1 thorns. If this enemy goes 3 turns without losing HP, It spawns a reflection that deals 15 damage."]
+    "DESCRIPTIONS": ["If this enemy goes 2 turns without losing HP, It spawns a reflection that deals 15 damage."]
   },
   "trackpad:ReflectionPower": {
     "NAME": "Reflection",
