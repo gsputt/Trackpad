@@ -28,15 +28,10 @@ public class ZombieHeart extends CustomRelic {
 
     @Override
     public void onMonsterDeath(AbstractMonster m) {
-        if (m.currentHealth == 0 && !AbstractDungeon.getMonsters().areMonstersBasicallyDead() && !m.hasPower(MinionPower.POWER_ID)) {
+        if (m.currentHealth == 0 && !m.hasPower(MinionPower.POWER_ID)) {
             this.flash();
             AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(m, this));
-            AbstractDungeon.actionManager.addToBottom(new AbstractGameAction() {
-                public void update() {
-                    AbstractDungeon.player.increaseMaxHp(1, true);
-                    this.isDone = true;
-                }
-            });
+            AbstractDungeon.player.increaseMaxHp(1, true);
             AbstractDungeon.actionManager
                     .addToBottom(new DamageAction(AbstractDungeon.player,
                             new DamageInfo(AbstractDungeon.player, 1, DamageInfo.DamageType.THORNS),

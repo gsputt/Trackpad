@@ -83,10 +83,18 @@ public class trackpad implements
     public static final String ADJECTIVE_PENDANT_OUTLINE = "relics/outline/AdjectivePendantOutline.png";
     public static final String CULTIST_FIGURINE = "relics/CultistFigurine.png";
     public static final String CULTIST_FIGURINE_OUTLINE = "relics/outline/CultistFigurineOutline.png";
-
-    //Monster images
-    public static final String ACCURSED_MIRROR = "monsters/AccursedMirror.png";
-    public static final String REFLECTION = "monsters/Reflection.png";
+    public static final String COMPENDIUM = "relics/Compendium.png";
+    public static final String COMPENDIUM_OUTLINE = "relics/outline/CompendiumOutline.png";
+    public static final String PET_ROCK = "relics/PetRock.png";
+    public static final String PET_ROCK_OUTLINE = "relics/outline/PetRockOutline.png";
+    public static final String WIND_UP_AUTO_DEALER = "relics/WindUpAutoDealer.png";
+    public static final String WIND_UP_AUTO_DEALER_OUTLINE = "relics/outline/WindUpAutoDealerOutline.png";
+    public static final String MOUSETRAP = "relics/Mousetrap.png";
+    public static final String MOUSETRAP_OUTLINE = "relics/outline/MousetrapOutline.png";
+    public static final String GUARDIAN_SPIRIT = "relics/GuardianSpirit.png";
+    public static final String GUARDIAN_SPIRIT_OUTLINE = "relics/outline/GuardianSpiritOutline.png";
+    public static final String HAND_OF_MIDAS = "relics/HandOfMidas.png";
+    public static final String HAND_OF_MIDAS_OUTLINE = "relics/outline/HandOfMidas.png";
 
     //Custom VFX
 
@@ -201,6 +209,13 @@ public class trackpad implements
         BaseMod.addRelic(new ZombieHeart(), RelicType.SHARED);
         BaseMod.addRelic(new AdjectivePendant(), RelicType.SHARED);
         BaseMod.addRelic(new CultistFigurine(), RelicType.SHARED);
+        BaseMod.addRelic(new Compendium(), RelicType.SHARED);
+        BaseMod.addRelic(new PetRock(), RelicType.SHARED);
+        BaseMod.addRelic(new WindUpAutoDealer(), RelicType.SHARED);
+        BaseMod.addRelic(new Mousetrap(), RelicType.SHARED);
+        BaseMod.addRelic(new GuardianSpirit(), RelicType.SHARED);
+        BaseMod.addRelic(new HandOfMidas(), RelicType.SHARED);
+
         // This adds a character specific relic. Only when you play with the mentioned color, will you get this relic.
         //BaseMod.addRelicToCustomPool(new StarterRelic2(), AbstractCardEnum.SCRIBE_BLUE);
         // This adds a relic to the Shared pool. Every character can find this relic.
@@ -233,8 +248,8 @@ public class trackpad implements
         BaseMod.loadCustomStringsFile(PotionStrings.class,
                 "TrackpadResources/localization/Trackpad-Potion-Strings.json");
 
-        BaseMod.loadCustomStringsFile(MonsterStrings.class,
-                "TrackpadResources/localization/Trackpad-Monster-Strings.json");
+        /*BaseMod.loadCustomStringsFile(MonsterStrings.class,
+                "TrackpadResources/localization/Trackpad-Monster-Strings.json");*/
 
         logger.info("Done editting strings");
     }

@@ -34,7 +34,7 @@ public class AdjectivePendant extends CustomRelic implements CustomSavable<Strin
 
     public AdjectivePendant()
     {
-        super(ID, new Texture(IMG), new Texture(OUTLINE), RelicTier.UNCOMMON, LandingSound.FLAT);
+        super(ID, new Texture(IMG), new Texture(OUTLINE), RelicTier.COMMON, LandingSound.FLAT);
 
     }
 

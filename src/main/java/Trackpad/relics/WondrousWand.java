@@ -18,7 +18,7 @@ public class WondrousWand extends CustomRelic {
 
 
     public WondrousWand() {
-        super(ID, new Texture(IMG), new Texture(OUTLINE), RelicTier.RARE, LandingSound.MAGICAL);
+        super(ID, new Texture(IMG), new Texture(OUTLINE), RelicTier.UNCOMMON, LandingSound.MAGICAL);
     }
 
     @Override

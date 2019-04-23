@@ -50,6 +50,49 @@
 			"Gain 1 Strength every 3 turns."
 		]
 	},
+	"trackpad:Compendium": {
+		"NAME": "Compendium",
+		"FLAVOR": "How to win the game in 3 easy steps.",
+		"DESCRIPTIONS": [
+			"At the start of each combat, add a random Rare card to your draw pile."
+		]
+	},
+	"trackpad:PetRock": {
+		"NAME": "Pet Rock",
+		"FLAVOR": "Remember to feed your pet rock once every 6 hours.",
+		"DESCRIPTIONS": [
+			"At the start of each turn, deal 2 damage to the enemy with the least HP."
+		]
+	},
+	"trackpad:WindUpAutoDealer": {
+		"NAME": "Wind-Up Auto-Dealer",
+		"FLAVOR": "Batteries not included.",
+		"DESCRIPTIONS": [
+			"Right Click to gain a charge. At the start of each turn, if this relic has charges, lose a charge and draw a card."
+		]
+	},
+	"trackpad:Mousetrap": {
+		"NAME": "Mousetrap",
+		"FLAVOR": "Watch your fingers.",
+		"DESCRIPTIONS": [
+			"Right Click this relic 15 times in one turn to set it. If set, the next time you get attacked, deal 10 damage to the attacker, and reset this relic. If you Right Click this relic 16 times in one turn, you take 10 damage, and the relic is reset. Can be set while outside combat."
+		]
+	},
+	"trackpad:GuardianSpirit": {
+		"NAME": "Guardian Spirit",
+		"FLAVOR": "Hey! Listen!",
+		"DESCRIPTIONS": [
+			"Upon pickup, fill your potion slots with Fairy in a Bottle."
+		]
+	},
+	"trackpad:HandOfMidas": {
+		"NAME": "Hand of Midas",
+		"FLAVOR": "Hasn't lost its magic touch.",
+		"DESCRIPTIONS": [
+			"Whenever you attack a non-elite non-boss enemy, there is a 10% chance that you gain gold equal to their HP and instantly kill them."
+		]
+	},
+
 
 	"trackpad:StarterRelic1": {
 		"NAME": "Spell Scribe's Scroll",
