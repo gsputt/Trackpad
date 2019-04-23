@@ -1,4 +1,29 @@
 {
+	"trackpad:StrongOption": {
+		"NAME": "Strong",
+		"DESCRIPTION": "Gain 2 Strength at the start of each combat."
+	},
+	"trackpad:SwiftOption": {
+		"NAME": "Swift",
+		"DESCRIPTION": "Gain 2 Dexterity at the start of each combat."
+	},
+	"trackpad:HealthyOption": {
+		"NAME": "Healthy",
+		"DESCRIPTION": "Heal 3 HP at the start of each combat."
+	},
+	"trackpad:EnergeticOption": {
+		"NAME": "Energetic",
+		"DESCRIPTION": "Gain [E] at the start of each combat."
+	},
+	"trackpad:WealthyOption": {
+		"NAME": "Wealthy",
+		"DESCRIPTION": "Gain 8 gold at the start of each combat."
+	},
+	"trackpad:CreativeOption": {
+		"NAME": "Creative",
+		"DESCRIPTION": "Choose 1 of 3 cards to shuffle into your draw pile at the start of each combat."
+	},
+
 	"trackpad:DefaultAttackWithVariable": {
 		"NAME": "Special Strike",
 		"DESCRIPTION": "Deal !D! Damage [R] times. NL (Deal !ENERGY_DAMAGE! damage total.)"

@@ -1,8 +1,6 @@
 package Trackpad;
 
-import Trackpad.relics.DisasterInABottle;
-import Trackpad.relics.PocketGalaxy;
-import Trackpad.relics.WondrousWand;
+import Trackpad.relics.*;
 import basemod.BaseMod;
 import basemod.ModLabel;
 import basemod.ModPanel;
@@ -77,6 +75,14 @@ public class trackpad implements
     public static final String WONDROUS_WAND_OUTLINE = "relics/outline/WondrousWandOutline.png";
     public static final String DISASTER_IN_A_BOTTLE = "relics/DisasterInABottle.png";
     public static final String DISASTER_IN_A_BOTTLE_OUTLINE = "relics/outline/DisasterInABottleOutline.png";
+    public static final String VOID_SPHERE = "relics/VoidSphere.png";
+    public static final String VOID_SPHERE_OUTLINE = "relics/outline/VoidSphereOutline.png";
+    public static final String ZOMBIE_HEART = "relics/ZombieHeart.png";
+    public static final String ZOMBIE_HEART_OUTLINE = "relics/outline/ZombieHeartOutline.png";
+    public static final String ADJECTIVE_PENDANT = "relics/AdjectivePendant.png";
+    public static final String ADJECTIVE_PENDANT_OUTLINE = "relics/outline/AdjectivePendantOutline.png";
+    public static final String CULTIST_FIGURINE = "relics/CultistFigurine.png";
+    public static final String CULTIST_FIGURINE_OUTLINE = "relics/outline/CultistFigurineOutline.png";
 
     //Monster images
     public static final String ACCURSED_MIRROR = "monsters/AccursedMirror.png";
@@ -191,6 +197,10 @@ public class trackpad implements
         BaseMod.addRelic(new PocketGalaxy(), RelicType.SHARED);
         BaseMod.addRelic(new WondrousWand(), RelicType.SHARED);
         BaseMod.addRelic(new DisasterInABottle(), RelicType.SHARED);
+        BaseMod.addRelic(new VoidSphere(), RelicType.SHARED);
+        BaseMod.addRelic(new ZombieHeart(), RelicType.SHARED);
+        BaseMod.addRelic(new AdjectivePendant(), RelicType.SHARED);
+        BaseMod.addRelic(new CultistFigurine(), RelicType.SHARED);
         // This adds a character specific relic. Only when you play with the mentioned color, will you get this relic.
         //BaseMod.addRelicToCustomPool(new StarterRelic2(), AbstractCardEnum.SCRIBE_BLUE);
         // This adds a relic to the Shared pool. Every character can find this relic.
@@ -235,6 +245,9 @@ public class trackpad implements
 
     @Override
     public void receiveEditKeywords() {
+        final String[] Envenom = { "Envenom"};
+        BaseMod.addKeyword("trackpad", "Envenom", Envenom, "Whenever an attack deals unblocked damage, apply 1 Poison.");
+
         /*
         final String[] Cast = { "Cast", "casts", "cast"};
         BaseMod.addKeyword("scribe", "Cast", Cast, "Use up all your stored Spell Effects and Spell Modifiers to cause effects. Additionally causes Scribed Scrolls to stop being added to your hand until another Spell Effect is played.");

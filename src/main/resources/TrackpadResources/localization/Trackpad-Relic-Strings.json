@@ -22,6 +22,34 @@
 			" will deal 10 damage to ALL enemies when played."
 		]
 	},
+	"trackpad:VoidSphere": {
+		"NAME": "Void Sphere",
+		"FLAVOR": "You lose grasp of reality.",
+		"DESCRIPTIONS": [
+			"At the start of combat, give all cards in your draw pile #yEthereal."
+		]
+	},
+	"trackpad:ZombieHeart": {
+		"NAME": "Zombie Heart",
+		"FLAVOR": "Must... Feed...",
+		"DESCRIPTIONS": [
+			"Whenever a non-minion enemy dies, gain 1 Max HP, take 1 damage."
+		]
+	},
+	"trackpad:AdjectivePendant": {
+		"NAME": "Pendant",
+		"FLAVOR": "It attunes to the user's will.",
+		"DESCRIPTIONS": [
+			"Upon pickup, choose an adjective. Adjectives give bonuses at the start of each combat."
+		]
+	},
+	"trackpad:CultistFigurine": {
+		"NAME": "Cultist Figurine",
+		"FLAVOR": "Collect them all!",
+		"DESCRIPTIONS": [
+			"Gain 1 Strength every 3 turns."
+		]
+	},
 
 	"trackpad:StarterRelic1": {
 		"NAME": "Spell Scribe's Scroll",
