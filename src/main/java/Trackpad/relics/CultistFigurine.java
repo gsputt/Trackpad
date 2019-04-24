@@ -36,6 +36,8 @@ public class CultistFigurine extends CustomRelic {
         if(this.counter >= 3)
         {
             this.counter = 0;
+            this.flash();
+            AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
             AbstractDungeon.actionManager.addToBottom(
                     new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
                             new StrengthPower(AbstractDungeon.player, 1), 1));

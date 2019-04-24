@@ -20,7 +20,7 @@ public class Mousetrap extends CustomRelic implements ClickableRelic {
     public static final String ID = trackpad.makeID("Mousetrap");
     public static final String IMG = trackpad.makePath(trackpad.MOUSETRAP);
     public static final String OUTLINE = trackpad.makePath(trackpad.MOUSETRAP_OUTLINE);
-    private boolean isSet = false;
+    private boolean resetThisCombat = false;
 
 
     public Mousetrap() {
@@ -37,20 +37,18 @@ public class Mousetrap extends CustomRelic implements ClickableRelic {
                 this.stopPulse();
                 AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(info.owner, this));
                 AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(info.owner,
-                        new DamageInfo(AbstractDungeon.player, 6, DamageInfo.DamageType.THORNS),
-                        AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-                isSet = false;
+                        new DamageInfo(AbstractDungeon.player, 15, DamageInfo.DamageType.THORNS),
+                        AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+                this.resetThisCombat = true;
             }
         }
         return damageAmount;
     }
 
     @Override
-    public void atTurnStart() {
-        if(isSet == false)
-        {
-            this.counter = 0;
-        }
+    public void atBattleStart() {
+        this.counter = 0;
+        this.resetThisCombat = false;
     }
 
     @Override
@@ -63,30 +61,20 @@ public class Mousetrap extends CustomRelic implements ClickableRelic {
     @Override
     public void onRightClick()
     {
-        this.flash();
-        this.counter -= 1;
-        if(this.counter == -15)
-        {
-            isSet = true;
-            this.beginLongPulse();
-        }
-        else if(this.counter <= -16)
-        {
-            isSet = false;
-            this.counter = 0;
-            this.flash();
-            this.stopPulse();
-            if(AbstractDungeon.player != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
-                AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-                AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(AbstractDungeon.player,
-                        new DamageInfo(AbstractDungeon.player, 6, DamageInfo.DamageType.THORNS),
-                        AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-            }
-            else if(AbstractDungeon.player != null)
+        if(AbstractDungeon.player != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
+            if(!this.resetThisCombat)
             {
-                AbstractDungeon.player.damage(new DamageInfo((AbstractCreature)null, 6, DamageInfo.DamageType.HP_LOSS));
+                this.flash();
+                this.counter -= 1;
+                if (this.counter == -15) {
+                    this.beginLongPulse();
+                } else if (this.counter <= -16) {
+                    this.counter = 0;
+                    this.flash();
+                    this.stopPulse();
+                    this.resetThisCombat = true;
+                }
             }
-
         }
     }
 

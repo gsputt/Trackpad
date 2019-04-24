@@ -4,13 +4,17 @@ import Trackpad.trackpad;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import java.util.Random;
+
+import static com.megacrit.cardcrawl.neow.NeowEvent.rng;
 
 public class HandOfMidas extends CustomRelic {
 
@@ -29,12 +33,17 @@ public class HandOfMidas extends CustomRelic {
         if(target instanceof AbstractMonster)
         {
             AbstractMonster monster = (AbstractMonster)target;
-            if(monster.type.equals(AbstractMonster.EnemyType.NORMAL))
+            if(monster.type == AbstractMonster.EnemyType.NORMAL)
             {
-                if(Math.random() <= 0.1)
+                //trackpad.logger.info("monster type is NORMAL");
+                if(AbstractDungeon.miscRng.random(99) < 10)
                 {
+                    this.flash();
+                    AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(monster, this));
+                    CardCrawlGame.sound.play("GOLD_GAIN");
                     AbstractDungeon.player.gainGold(monster.currentHealth);
-                    monster.die(true);
+                    monster.currentHealth = 0;
+                    monster.damage(new DamageInfo((AbstractCreature)null, 0, DamageInfo.DamageType.THORNS));
                 }
             }
         }

@@ -3,23 +3,23 @@
 		"NAME": "Pocket Galaxy",
 		"FLAVOR": "A galaxy in the palm of your hand.",
 		"DESCRIPTIONS": [
-			"Whenever you discard a card, shuffle a random card into your draw pile. It costs 1 less."
+			"Whenever you discard a card, shuffle a random card into your draw pile. It costs #b1 less."
 		]
 	},
 	"trackpad:WondrousWand": {
 		"NAME": "Wondrous Wand",
 		"FLAVOR": "Free Magic.",
 		"DESCRIPTIONS": [
-			"Draw an extra card at the start of combat. It costs 0 this turn."
+			"Draw an extra card at the start of combat. It costs #b0 this turn."
 		]
 	},
 	"trackpad:DisasterInABottle": {
 		"NAME": "Disaster in a Bottle",
 		"FLAVOR": "Bottled Disasters are almost cute.",
 		"DESCRIPTIONS": [
-			"Upon pickup, choose a card. When you play that card, deal 10 damage to ALL enemies.",
+			"Upon pickup, choose a card. When you play that card, deal #b10 damage to ALL enemies.",
 			"Choose a card for ",
-			" will deal 10 damage to ALL enemies when played."
+			" will deal #b10 damage to ALL enemies when played."
 		]
 	},
 	"trackpad:VoidSphere": {
@@ -33,7 +33,7 @@
 		"NAME": "Zombie Heart",
 		"FLAVOR": "Must... Feed...",
 		"DESCRIPTIONS": [
-			"Whenever a non-minion enemy dies, gain 1 Max HP, take 1 damage."
+			"Whenever a non-minion enemy dies, gain #b1 Max HP, take #b1 damage."
 		]
 	},
 	"trackpad:AdjectivePendant": {
@@ -47,7 +47,7 @@
 		"NAME": "Cultist Figurine",
 		"FLAVOR": "Collect them all!",
 		"DESCRIPTIONS": [
-			"Gain 1 Strength every 3 turns."
+			"Gain 1 #yStrength every #b3 turns."
 		]
 	},
 	"trackpad:Compendium": {
@@ -61,7 +61,7 @@
 		"NAME": "Pet Rock",
 		"FLAVOR": "Remember to feed your pet rock once every 6 hours.",
 		"DESCRIPTIONS": [
-			"At the start of each turn, deal 2 damage to the enemy with the least HP."
+			"At the start of each turn, deal #b2 damage to the enemy with the least HP."
 		]
 	},
 	"trackpad:WindUpAutoDealer": {
@@ -75,7 +75,7 @@
 		"NAME": "Mousetrap",
 		"FLAVOR": "Watch your fingers.",
 		"DESCRIPTIONS": [
-			"Right Click this relic 15 times in one turn to set it. If set, the next time you get attacked, deal 10 damage to the attacker, and reset this relic. If you Right Click this relic 16 times in one turn, you take 10 damage, and the relic is reset. Can be set while outside combat."
+			"Right Click this relic #b15 times in one combat to set it. If set, the next time you get attacked, deal #b15 damage to the attacker, and reset this relic. If you Right Click this relic #b16 times in one turn, this relic is reset. Can be set once per combat."
 		]
 	},
 	"trackpad:GuardianSpirit": {
@@ -89,9 +89,31 @@
 		"NAME": "Hand of Midas",
 		"FLAVOR": "Hasn't lost its magic touch.",
 		"DESCRIPTIONS": [
-			"Whenever you attack a non-elite non-boss enemy, there is a 10% chance that you gain gold equal to their HP and instantly kill them."
+			"Whenever you attack a non-elite non-boss enemy, there is a #b10% chance that you gain #yGold equal to their HP and instantly kill them."
 		]
 	},
+	"trackpad:SappingStone": {
+		"NAME": "Sapping Stone",
+		"FLAVOR": "Saps away the strength of others.",
+		"DESCRIPTIONS": [
+			"At the start of each combat, ALL enemies lose #b1 #ystrength until the end of turn."
+		]
+	},
+	"trackpad:SneckoScepter": {
+		"NAME": "Snecko Scepter",
+		"FLAVOR": "Eyeball on a stick.",
+		"DESCRIPTIONS": [
+			"Whenever you draw a card that costs #b3 or more, its cost is randomized."
+		]
+	},
+	"trackpad:ByrdCharm": {
+		"NAME": "Byrd Charm",
+		"FLAVOR": "Lets you float. A little.",
+		"DESCRIPTIONS": [
+			"At the start of combat, gain 1 #yFlight."
+		]
+	},
+
 
 
 	"trackpad:StarterRelic1": {

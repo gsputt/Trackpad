@@ -11,6 +11,8 @@ import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.monsters.city.Byrd;
+import com.megacrit.cardcrawl.monsters.city.Snecko;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -94,7 +96,13 @@ public class trackpad implements
     public static final String GUARDIAN_SPIRIT = "relics/GuardianSpirit.png";
     public static final String GUARDIAN_SPIRIT_OUTLINE = "relics/outline/GuardianSpiritOutline.png";
     public static final String HAND_OF_MIDAS = "relics/HandOfMidas.png";
-    public static final String HAND_OF_MIDAS_OUTLINE = "relics/outline/HandOfMidas.png";
+    public static final String HAND_OF_MIDAS_OUTLINE = "relics/outline/HandOfMidasOutline.png";
+    public static final String SAPPING_STONE = "relics/SappingStone.png";
+    public static final String SAPPING_STONE_OUTLINE = "relics/outline/SappingStoneOutline.png";
+    public static final String SNECKO_SCEPTER = "relics/SneckoScepter.png";
+    public static final String SNECKO_SCEPTER_OUTLINE = "relics/outline/SneckoScepterOutline.png";
+    public static final String BYRD_CHARM = "relics/ByrdCharm.png";
+    public static final String BYRD_CHARM_OUTLINE = "relics/outline/ByrdCharmOutline.png";
 
     //Custom VFX
 
@@ -215,6 +223,9 @@ public class trackpad implements
         BaseMod.addRelic(new Mousetrap(), RelicType.SHARED);
         BaseMod.addRelic(new GuardianSpirit(), RelicType.SHARED);
         BaseMod.addRelic(new HandOfMidas(), RelicType.SHARED);
+        BaseMod.addRelic(new SappingStone(), RelicType.SHARED);
+        BaseMod.addRelic(new SneckoScepter(), RelicType.SHARED);
+        BaseMod.addRelic(new ByrdCharm(), RelicType.SHARED);
 
         // This adds a character specific relic. Only when you play with the mentioned color, will you get this relic.
         //BaseMod.addRelicToCustomPool(new StarterRelic2(), AbstractCardEnum.SCRIBE_BLUE);

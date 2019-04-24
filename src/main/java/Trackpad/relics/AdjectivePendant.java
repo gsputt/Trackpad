@@ -66,6 +66,7 @@ public class AdjectivePendant extends CustomRelic implements CustomSavable<Strin
                 case "trackpad:WealthyOption":
                     AbstractDungeon.actionManager.addToBottom(new AbstractGameAction() {
                         public void update() {
+                            CardCrawlGame.sound.play("GOLD_GAIN");
                             AbstractDungeon.player.gainGold(8);
                             this.isDone = true;
                         }
