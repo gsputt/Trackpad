@@ -6,5 +6,9 @@
 "trackpad:SpellBlock": {
   "NAME": "Effect: Freeze",
   "DESCRIPTIONS": ["Your next spell cast will give you #b", " #yBlock."]
-}
+},
+  "trackpad:FocusingLensPower": {
+    "NAME": "Focusing Lens Target",
+    "DESCRIPTIONS": ["ALL #yLightning orbs will target this enemy."]
+  }
 }

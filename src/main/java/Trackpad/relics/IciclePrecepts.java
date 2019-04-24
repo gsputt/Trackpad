@@ -41,7 +41,7 @@ public class IciclePrecepts extends CustomRelic implements OnChannelRelic, remov
         if(orb instanceof Frost)
         {
             if(AbstractDungeon.player.hasPower(ThornsPower.POWER_ID)) {
-                AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, ThornsPower.POWER_ID, -1));
+                AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, ThornsPower.POWER_ID, 1));
             }
         }
     }

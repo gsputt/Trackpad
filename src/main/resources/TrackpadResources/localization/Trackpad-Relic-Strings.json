@@ -194,6 +194,27 @@
 			"Whenever you #yChannel a #yFrost orb, gain 1 #yThorns. Whenever you #yEvoke or remove a #yFrost orb, lose 1 #yThorns."
 		]
 	},
+	"trackpad:FocusingLens": {
+		"NAME": "Focusing Lens",
+		"FLAVOR": "Feel the power!",
+		"DESCRIPTIONS": [
+			"Whenever you attack an enemy, all #yLightning orbs will target that enemy for the rest of the turn."
+		]
+	},
+	"trackpad:BottledAnger": {
+		"NAME": "Bottled Anger",
+		"FLAVOR": "Not actually a bottle relic.",
+		"DESCRIPTIONS": [
+			"At the start of each combat, draw all Angers from your deck. Can overfill your hand."
+		]`
+	},
+	"trackpad:BerserkersDraught": {
+		"NAME": "Berserker's Draught",
+		"FLAVOR": "ROOOOAAAAAARRRGH",
+		"DESCRIPTIONS": [
+			"Whenever you play an attack, add a charge to this relic. Whenever you play a skill, remove all charges. At the start of each combat, gain 1 #yStrength for each charge on this relic."
+		]
+	},
 
 
 

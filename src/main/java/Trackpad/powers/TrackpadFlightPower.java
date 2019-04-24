@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class TrackpadFlightPower extends AbstractPower implements CloneablePowerInterface {
-    public static final String POWER_ID = "TrackpadFlightPower";
+    public static final String POWER_ID = "trackpad:TrackpadFlightPower";
     private static final PowerStrings powerStrings;
     public static final String NAME;
     public static final String[] DESCRIPTIONS;
@@ -21,7 +21,7 @@ public class TrackpadFlightPower extends AbstractPower implements CloneablePower
 
     public TrackpadFlightPower(AbstractCreature owner, int amount) {
         this.name = NAME;
-        this.ID = "TrackpadFlightPower";
+        this.ID = "trackpad:TrackpadFlightPower";
         this.owner = owner;
         this.amount = amount;
         this.storedAmount = amount;

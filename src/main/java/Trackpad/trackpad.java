@@ -66,6 +66,7 @@ public class trackpad implements
     public static final String SHATTER_POWER = "powers/ShatterPower.png";
     public static final String DISSIPATING_POWER = "powers/DissipatingPower.png";
     public static final String REFLECTION_POWER = "powers/ReflectionPower.png";
+    public static final String FOCUSING_LENS_POWER = "powers/FocusingLensPower.png";
 
 
     // Relic images
@@ -125,6 +126,12 @@ public class trackpad implements
     public static final String ANCESTRAL_ARMAMENTS_OUTLINE = "relics/outline/AncestralArmamentsOutline.png";
     public static final String ICICLE_PRECEPTS = "relics/IciclePrecepts.png";
     public static final String ICICLE_PRECEPTS_OUTLINE = "relics/outline/IciclePreceptsOutline.png";
+    public static final String FOCUSING_LENS = "relics/FocusingLens.png";
+    public static final String FOCUSING_LENS_OUTLINE = "relics/outline/FocusingLensOutline.png";
+    public static final String BOTTLED_ANGER = "relics/BottledAnger.png";
+    public static final String BOTTLED_ANGER_OUTLINE = "relics/outline/BottledAngerOutline.png";
+    public static final String BERSERKERS_DRAUGHT = "relics/BerserkersDraught.png";
+    public static final String BERSERKERS_DRAUGHT_OUTLINE = "relics/outline/BerserkersDraughtOutline.png";
 
     //Custom VFX
 
@@ -259,6 +266,9 @@ public class trackpad implements
         BaseMod.addRelic(new WeightlessShivs(), RelicType.GREEN);
         BaseMod.addRelic(new AncestralArmaments(), RelicType.GREEN);
         BaseMod.addRelic(new IciclePrecepts(), RelicType.BLUE);
+        BaseMod.addRelic(new FocusingLens(), RelicType.BLUE);
+        BaseMod.addRelic(new BottledAnger(), RelicType.RED);
+        BaseMod.addRelic(new BerserkersDraught(), RelicType.RED);
 
         // This adds a character specific relic. Only when you play with the mentioned color, will you get this relic.
         //BaseMod.addRelicToCustomPool(new StarterRelic2(), AbstractCardEnum.SCRIBE_BLUE);

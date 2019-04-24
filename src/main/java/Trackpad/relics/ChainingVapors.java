@@ -34,7 +34,7 @@ public class ChainingVapors extends CustomRelic {
             this.counter++;
             if(this.counter > 4)
             {
-                AbstractMonster randomMonster = AbstractDungeon.getCurrRoom().monsters.monsters.get(AbstractDungeon.miscRng.random(AbstractDungeon.getCurrRoom().monsters.monsters.size()-1));
+                AbstractMonster randomMonster = AbstractDungeon.getCurrRoom().monsters.monsters.get(AbstractDungeon.cardRandomRng.random(AbstractDungeon.getCurrRoom().monsters.monsters.size()-1));
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(randomMonster, AbstractDungeon.player, new PoisonPower(randomMonster, AbstractDungeon.player, 1), 1));
             }
         }

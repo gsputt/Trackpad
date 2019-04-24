@@ -37,7 +37,7 @@ public class HandOfMidas extends CustomRelic {
             if(monster.type == AbstractMonster.EnemyType.NORMAL)
             {
                 //trackpad.logger.info("monster type is NORMAL");
-                if(AbstractDungeon.miscRng.random(99) < 10)
+                if(AbstractDungeon.cardRandomRng.random(99) < 10)
                 {
                     this.flash();
                     AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(monster, this));
