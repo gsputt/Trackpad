@@ -103,6 +103,28 @@ public class trackpad implements
     public static final String SNECKO_SCEPTER_OUTLINE = "relics/outline/SneckoScepterOutline.png";
     public static final String BYRD_CHARM = "relics/ByrdCharm.png";
     public static final String BYRD_CHARM_OUTLINE = "relics/outline/ByrdCharmOutline.png";
+    public static final String TOUGH_GLOVES = "relics/ToughGloves.png";
+    public static final String TOUGH_GLOVES_OUTLINE = "relics/outline/ToughGlovesOutline.png";
+    public static final String BOTTLED_TSUNAMI = "relics/BottledTsunami.png";
+    public static final String BOTTLED_TSUNAMI_OUTLINE = "relics/outline/BottledTsunamiOutline.png";
+    public static final String RAPID_FIRE = "relics/RapidFire.png";
+    public static final String RAPID_FIRE_OUTLINE = "relics/outline/RapidFireOutline.png";
+    public static final String BOTTLED_SHADOW = "relics/BottledShadow.png";
+    public static final String BOTTLED_SHADOW_OUTLINE = "relics/outline/BottledShadowOutline.png";
+    public static final String WRITERS_BLOCK = "relics/WritersBlock.png";
+    public static final String WRITERS_BLOCK_OUTLINE = "relics/outline/WritersBlockOutline.png";
+    public static final String NEUTRINO_GENERATOR = "relics/NeutrinoGenerator.png";
+    public static final String NEUTRINO_GENERATOR_OUTLINE = "relics/NeutrinoGenerator.png";
+    public static final String STAINLESS_STEEL = "relics/StainlessSteel.png";
+    public static final String STAINLESS_STEEL_OUTLINE = "relics/outline/StainlessSteelOutline.png";
+    public static final String CHAINING_VAPORS = "relics/ChainingVapors.png";
+    public static final String CHAINING_VAPORS_OUTLINE = "relics/outline/ChainingVaporsOutline.png";
+    public static final String WEIGHTLESS_SHIVS = "relics/WeightlessShivs.png";
+    public static final String WEIGHTLESS_SHIVS_OUTLINE = "relics/outline/WeightlessShivsOutline.png";
+    public static final String ANCESTRAL_ARMAMENTS = "relics/AncestralArmaments.png";
+    public static final String ANCESTRAL_ARMAMENTS_OUTLINE = "relics/outline/AncestralArmamentsOutline.png";
+    public static final String ICICLE_PRECEPTS = "relics/IciclePrecepts.png";
+    public static final String ICICLE_PRECEPTS_OUTLINE = "relics/outline/IciclePreceptsOutline.png";
 
     //Custom VFX
 
@@ -226,6 +248,17 @@ public class trackpad implements
         BaseMod.addRelic(new SappingStone(), RelicType.SHARED);
         BaseMod.addRelic(new SneckoScepter(), RelicType.SHARED);
         BaseMod.addRelic(new ByrdCharm(), RelicType.SHARED);
+        BaseMod.addRelic(new ToughGloves(), RelicType.SHARED);
+        BaseMod.addRelic(new BottledTsunami(), RelicType.SHARED);
+        BaseMod.addRelic(new RapidFire(), RelicType.SHARED);
+        BaseMod.addRelic(new BottledShadow(), RelicType.SHARED);
+        BaseMod.addRelic(new WritersBlock(), RelicType.SHARED);
+        BaseMod.addRelic(new NeutrinoGenerator(), RelicType.BLUE);
+        BaseMod.addRelic(new StainlessSteel(), RelicType.RED);
+        BaseMod.addRelic(new ChainingVapors(), RelicType.GREEN);
+        BaseMod.addRelic(new WeightlessShivs(), RelicType.GREEN);
+        BaseMod.addRelic(new AncestralArmaments(), RelicType.GREEN);
+        BaseMod.addRelic(new IciclePrecepts(), RelicType.BLUE);
 
         // This adds a character specific relic. Only when you play with the mentioned color, will you get this relic.
         //BaseMod.addRelicToCustomPool(new StarterRelic2(), AbstractCardEnum.SCRIBE_BLUE);

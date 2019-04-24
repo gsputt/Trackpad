@@ -70,7 +70,7 @@ public class Mousetrap extends CustomRelic implements ClickableRelic {
                     this.beginLongPulse();
                 } else if (this.counter <= -16) {
                     this.counter = 0;
-                    this.flash();
+                    AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
                     this.stopPulse();
                     this.resetThisCombat = true;
                 }

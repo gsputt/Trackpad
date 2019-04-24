@@ -22,6 +22,7 @@ import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.EnvenomPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.vfx.GainPennyEffect;
 
 public class AdjectivePendant extends CustomRelic implements CustomSavable<String>
 {
@@ -66,7 +67,10 @@ public class AdjectivePendant extends CustomRelic implements CustomSavable<Strin
                 case "trackpad:WealthyOption":
                     AbstractDungeon.actionManager.addToBottom(new AbstractGameAction() {
                         public void update() {
-                            CardCrawlGame.sound.play("GOLD_GAIN");
+                            for(int i = 0; i < 8; i++) {
+                                AbstractDungeon.effectList.add(new GainPennyEffect(AbstractDungeon.player, AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, false));
+                            }
+                            //CardCrawlGame.sound.play("GOLD_GAIN");
                             AbstractDungeon.player.gainGold(8);
                             this.isDone = true;
                         }

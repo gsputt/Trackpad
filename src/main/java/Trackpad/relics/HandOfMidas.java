@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.vfx.GainPennyEffect;
 
 import java.util.Random;
 
@@ -40,7 +41,10 @@ public class HandOfMidas extends CustomRelic {
                 {
                     this.flash();
                     AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(monster, this));
-                    CardCrawlGame.sound.play("GOLD_GAIN");
+                    //CardCrawlGame.sound.play("GOLD_GAIN");
+                    for(int i = 0; i < monster.currentHealth; i++) {
+                        AbstractDungeon.effectList.add(new GainPennyEffect(AbstractDungeon.player, monster.hb.cX, monster.hb.cY, AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, false));
+                    }
                     AbstractDungeon.player.gainGold(monster.currentHealth);
                     monster.currentHealth = 0;
                     monster.damage(new DamageInfo((AbstractCreature)null, 0, DamageInfo.DamageType.THORNS));

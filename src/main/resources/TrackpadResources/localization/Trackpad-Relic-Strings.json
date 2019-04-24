@@ -113,6 +113,87 @@
 			"At the start of combat, gain 1 #yFlight."
 		]
 	},
+	"trackpad:ToughGloves": {
+		"NAME": "Tough Gloves",
+		"FLAVOR": "Guaranteed to protect you from thorns, or your money back.",
+		"DESCRIPTIONS": [
+			"Take no thorns damage from enemies."
+		]
+	},
+	"trackpad:BottledTsunami": {
+		"NAME": "Bottled Tsunami",
+		"FLAVOR": "Open for infinite water.",
+		"DESCRIPTIONS": [
+			"Upon pickup, choose a card. When you draw that card, add #b2 copies with #yEthereal and #yExhaust to your hand.",
+			"Choose a card for ",
+			" will add #b2 copies of itself with #yEthereal and #yExhaust to your hand when drawn."
+		]
+	},
+	"trackpad:RapidFire": {
+		"NAME": "Rapid Fire",
+		"FLAVOR": "Fire that moves veryily fastily.",
+		"DESCRIPTIONS": [
+			"Whenever you deal attack damage, increase it by 2."
+		]
+	},
+	"trackpad:BottledShadow": {
+		"NAME": "Bottled Shadow",
+		"FLAVOR": "How do you bottle a lack of photons in the visible light spectrum?",
+		"DESCRIPTIONS": [
+			"Upon pickup, choose a card. When you play that card, it is played an additional time.",
+			"Choose a card for ",
+			" will be played an additional time."
+		]
+	},
+	"trackpad:WritersBlock": {
+		"NAME": "Writer's Block",
+		"FLAVOR": "Brick.",
+		"DESCRIPTIONS": [
+			"At the end of your turn, if you have not played a skill this turn, gain #b6 Block."
+		]
+	},
+	"trackpad:NeutrinoGenerator": {
+		"NAME": "Neutrino Generator",
+		"FLAVOR": "Has a known side effect of being hard to pronounce.",
+		"DESCRIPTIONS": [
+			"Whenever you play a card, #yChannel an orb based on its cost. #b0 - Random Orb. #b1 - #yLightning Orb. #b2 - #yFrost Orb. #b3 - #yDark Orb. #bX - #yPlasma Orb."
+		]
+	},
+	"trackpad:StainlessSteel": {
+		"NAME": "Stainless Steel",
+		"FLAVOR": "Stainless makes pain-less.",
+		"DESCRIPTIONS": [
+			"Every time you gain #yBlock #b3 times in a single turn, gain #b5 #yBlock."
+		]
+	},
+	"trackpad:ChainingVapors": {
+		"NAME": "Chaining Vapors",
+		"FLAVOR": "How a chain of poison gas is made is a mystery.",
+		"DESCRIPTIONS": [
+			"If you've already drawn #b4 cards this turn (Excluding your initial hand), whenever you draw a card, apply #b1 #yPoison to a random enemy."
+		]
+	},
+	"trackpad:WeightlessShivs": {
+		"NAME": "Weightless Weaponry",
+		"FLAVOR": "Have you ever seen an anti-gravity knife?",
+		"DESCRIPTIONS": [
+			"Your #yShivs now #yRetain."
+		]
+	},
+	"trackpad:AncestralArmaments": {
+		"NAME": "Ancestral Armaments",
+		"FLAVOR": "The armaments are actually made of knives.",
+		"DESCRIPTIONS": [
+			"#yShivs are now upgraded when created. #yShivs can be upgraded any number of times."
+		]
+	},
+	"trackpad:IciclePrecepts": {
+		"NAME": "Icicle Precepts",
+		"FLAVOR": "Rule #142: Icicles can be used as a stabbing weapon for self defence.",
+		"DESCRIPTIONS": [
+			"Whenever you #yChannel a #yFrost orb, gain 1 #yThorns. Whenever you #yEvoke or remove a #yFrost orb, lose 1 #yThorns."
+		]
+	},
 
 
 
