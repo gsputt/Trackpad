@@ -44,6 +44,12 @@ public class WritersBlock extends CustomRelic {
     }
 
     @Override
+    public void onVictory()
+    {
+        this.stopPulse();
+    }
+
+    @Override
     public void onPlayCard(AbstractCard c, AbstractMonster m) {
         if(c.type == AbstractCard.CardType.SKILL)
         {
