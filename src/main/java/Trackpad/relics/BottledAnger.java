@@ -6,9 +6,11 @@ import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.red.Anger;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.vfx.FastCardObtainEffect;
+import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 
 import java.util.ArrayList;
 
@@ -34,6 +36,12 @@ public class BottledAnger extends CustomRelic{
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];
 
+    }
+
+    @Override
+    public void onEquip()
+    {
+        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Anger(), (float) Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
     }
 
     @Override

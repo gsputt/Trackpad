@@ -205,7 +205,7 @@
 		"NAME": "Bottled Anger",
 		"FLAVOR": "Not actually a bottle relic.",
 		"DESCRIPTIONS": [
-			"At the start of each combat, draw all Angers from your deck. Can overfill your hand. At the end of each combat, add an Anger to your deck."
+			"At the start of each combat, draw all Angers from your deck. Can overfill your hand. Upon pickup, add an Anger to your deck."
 		]
 	},
 	"trackpad:BerserkersDraught": {
