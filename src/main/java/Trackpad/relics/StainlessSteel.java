@@ -37,8 +37,8 @@ public class StainlessSteel extends CustomRelic {
         {
             this.flash();
             AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, 5));
             this.counter = 0;
+            return MathUtils.floor(blockAmount + 5);
         }
         return MathUtils.floor(blockAmount);
     }
