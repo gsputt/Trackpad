@@ -54,7 +54,7 @@
 		"NAME": "Compendium",
 		"FLAVOR": "How to win the game in 3 easy steps.",
 		"DESCRIPTIONS": [
-			"At the start of each combat, add a random Rare card to your draw pile."
+			"At the start of each combat, add a random Rare card to your draw pile. It costs 1 less."
 		]
 	},
 	"trackpad:PetRock": {
@@ -75,7 +75,7 @@
 		"NAME": "Mousetrap",
 		"FLAVOR": "Watch your fingers.",
 		"DESCRIPTIONS": [
-			"Right Click this relic #b15 times in one combat to set it. If set, the next time you get attacked, deal #b15 damage to the attacker, and reset this relic. If you Right Click this relic #b16 times in one turn, this relic is reset. Can be set once per combat."
+			""
 		]
 	},
 	"trackpad:GuardianSpirit": {
@@ -96,7 +96,7 @@
 		"NAME": "Sapping Stone",
 		"FLAVOR": "Saps away the strength of others.",
 		"DESCRIPTIONS": [
-			"At the start of each combat, ALL enemies lose #b1 #ystrength until the end of turn."
+			"At the start of each combat, ALL enemies lose #b1 #yStrength until the end of their turn."
 		]
 	},
 	"trackpad:SneckoScepter": {
@@ -205,7 +205,7 @@
 		"NAME": "Bottled Anger",
 		"FLAVOR": "Not actually a bottle relic.",
 		"DESCRIPTIONS": [
-			"At the start of each combat, draw all Angers from your deck. Can overfill your hand."
+			"At the start of each combat, draw all Angers from your deck. Can overfill your hand. At the end of each combat, add an Anger to your deck."
 		]
 	},
 	"trackpad:BerserkersDraught": {

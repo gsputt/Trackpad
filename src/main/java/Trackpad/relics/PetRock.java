@@ -10,6 +10,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
+import java.util.Iterator;
+
 public class PetRock extends CustomRelic {
 
     // ID, images, text.
@@ -25,23 +27,24 @@ public class PetRock extends CustomRelic {
     @Override
     public void atTurnStart()
     {
-        int i = 1;
-        AbstractMonster savedMonster = AbstractDungeon.getCurrRoom().monsters.monsters.get(0);
-        AbstractMonster targetMonster;
-        while(i < AbstractDungeon.getCurrRoom().monsters.monsters.size())
-        {
-            targetMonster = AbstractDungeon.getCurrRoom().monsters.monsters.get(i);
-            if((targetMonster.currentHealth < savedMonster.currentHealth) && !(targetMonster.isDeadOrEscaped() || targetMonster.currentHealth <= 0 || targetMonster.halfDead))
-            {
-                savedMonster = targetMonster;
+        AbstractMonster weakestMonster = null;
+        Iterator var4 = AbstractDungeon.getMonsters().monsters.iterator();
+
+        while(var4.hasNext()) {
+            AbstractMonster m = (AbstractMonster)var4.next();
+            if (!m.isDeadOrEscaped()) {
+                if (weakestMonster == null) {
+                    weakestMonster = m;
+                } else if (m.currentHealth < weakestMonster.currentHealth) {
+                    weakestMonster = m;
+                }
             }
-            i++;
         }
-        AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(savedMonster,
+        AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(weakestMonster,
                 new DamageInfo(AbstractDungeon.player, 2, DamageInfo.DamageType.THORNS),
                 AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         this.flash();
-        AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(savedMonster, this));
+        AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(weakestMonster, this));
     }
 
 

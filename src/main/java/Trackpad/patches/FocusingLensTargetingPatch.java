@@ -1,6 +1,7 @@
 package Trackpad.patches;
 
 import Trackpad.powers.FocusingLensPower;
+import Trackpad.relics.FocusingLens;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.actions.defect.LightningOrbEvokeAction;
 import com.megacrit.cardcrawl.actions.defect.LightningOrbPassiveAction;
@@ -24,17 +25,18 @@ public class FocusingLensTargetingPatch {
                 locator = Locator.class,
                 localvars = {"m"}
         )
-        public static void Patch(LightningOrbPassiveAction __instance, @ByRef(type = "com.megacrit.cardcrawl.core.AbstractCreature") Object[] m)
-        {
-            ArrayList<AbstractMonster> monsterList = new ArrayList<>();
-            for(AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters)
-            {
-                if(mo.hasPower(FocusingLensPower.POWER_ID))
-                {
-                    monsterList.add(mo);
+        public static void Patch(LightningOrbPassiveAction __instance, @ByRef(type = "com.megacrit.cardcrawl.core.AbstractCreature") Object[] m) {
+            if (AbstractDungeon.player.hasRelic(FocusingLens.ID)) {
+                ArrayList<AbstractMonster> monsterList = new ArrayList<>();
+                for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+                    if (mo.hasPower(FocusingLensPower.POWER_ID)) {
+                        monsterList.add(mo);
+                    }
+                }
+                if (monsterList.size() > 0) {
+                    m[0] = monsterList.get(cardRandomRng.random(monsterList.size() - 1));
                 }
             }
-            m[0] = monsterList.get(cardRandomRng.random(monsterList.size() - 1));
         }
     }
 
@@ -47,16 +49,19 @@ public class FocusingLensTargetingPatch {
                 locator = Locator.class,
                 localvars = {"m"}
         )
-        public static void Patch(LightningOrbEvokeAction __instance, @ByRef(type = "com.megacrit.cardcrawl.core.AbstractCreature") Object[] m)
-        {ArrayList<AbstractMonster> monsterList = new ArrayList<>();
-            for(AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters)
-            {
-                if(mo.hasPower(FocusingLensPower.POWER_ID))
-                {
-                    monsterList.add(mo);
+        public static void Patch(LightningOrbEvokeAction __instance, @ByRef(type = "com.megacrit.cardcrawl.core.AbstractCreature") Object[] m) {
+            if (AbstractDungeon.player.hasRelic(FocusingLens.ID)) {
+                ArrayList<AbstractMonster> monsterList = new ArrayList<>();
+                for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+                    if (mo.hasPower(FocusingLensPower.POWER_ID)) {
+                        monsterList.add(mo);
+                    }
+                }
+                if (monsterList.size() > 0) {
+                    m[0] = monsterList.get(cardRandomRng.random(monsterList.size() - 1));
                 }
             }
-            m[0] = monsterList.get(cardRandomRng.random(monsterList.size() - 1));}
+        }
 
     }
 

@@ -32,6 +32,7 @@ public class CompendiumAction extends AbstractGameAction {
             }
         }
         AbstractCard card = (AbstractCard)list.get(cardRandomRng.random(list.size() - 1));
+        card.modifyCostForCombat(-1);
         AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(card, 1, true, true));
     }
 }

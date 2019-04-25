@@ -14,13 +14,13 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
-public class Mousetrap extends CustomRelic implements ClickableRelic {
+public class Mousetrap extends CustomRelic {
 
     // ID, images, text.
     public static final String ID = trackpad.makeID("Mousetrap");
     public static final String IMG = trackpad.makePath(trackpad.MOUSETRAP);
     public static final String OUTLINE = trackpad.makePath(trackpad.MOUSETRAP_OUTLINE);
-    private boolean resetThisCombat = false;
+    private boolean set = false;
 
 
     public Mousetrap() {
@@ -31,15 +31,13 @@ public class Mousetrap extends CustomRelic implements ClickableRelic {
     public int onAttacked(DamageInfo info, int damageAmount) {
         if(info.owner != AbstractDungeon.player && info.owner != null)
         {
-            if(this.counter == -15){
-                this.counter = 0;
+            if(this.set){
                 this.flash();
-                this.stopPulse();
                 AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(info.owner, this));
                 AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(info.owner,
                         new DamageInfo(AbstractDungeon.player, 15, DamageInfo.DamageType.THORNS),
                         AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-                this.resetThisCombat = true;
+                this.set = false;
             }
         }
         return damageAmount;
@@ -47,37 +45,8 @@ public class Mousetrap extends CustomRelic implements ClickableRelic {
 
     @Override
     public void atBattleStart() {
-        this.counter = 0;
-        this.resetThisCombat = false;
+        this.set = true;
     }
-
-    @Override
-    public void onEquip()
-    {
-        this.counter = 0;
-    }
-
-
-    @Override
-    public void onRightClick()
-    {
-        if(AbstractDungeon.player != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
-            if(!this.resetThisCombat)
-            {
-                this.flash();
-                this.counter -= 1;
-                if (this.counter == -15) {
-                    this.beginLongPulse();
-                } else if (this.counter <= -16) {
-                    this.counter = 0;
-                    AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-                    this.stopPulse();
-                    this.resetThisCombat = true;
-                }
-            }
-        }
-    }
-
 
     // Description
     @Override

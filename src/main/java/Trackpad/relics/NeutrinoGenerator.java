@@ -22,7 +22,7 @@ public class NeutrinoGenerator extends CustomRelic {
 
 
     public NeutrinoGenerator() {
-        super(ID, new Texture(IMG), new Texture(OUTLINE), RelicTier.RARE, LandingSound.HEAVY);
+        super(ID, new Texture(IMG), new Texture(OUTLINE), RelicTier.BOSS, LandingSound.HEAVY);
     }
 
     @Override
