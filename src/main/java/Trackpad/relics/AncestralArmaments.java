@@ -19,7 +19,7 @@ public class AncestralArmaments extends CustomRelic {
 
 
     public AncestralArmaments() {
-        super(ID, new Texture(IMG), new Texture(OUTLINE), RelicTier.UNCOMMON, LandingSound.CLINK);
+        super(ID, new Texture(IMG), new Texture(OUTLINE), RelicTier.RARE, LandingSound.CLINK);
     }
     //Go look in AncestralArmamentsPatch for the actual code for this relic.
 

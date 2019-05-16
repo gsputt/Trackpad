@@ -34,20 +34,20 @@ public class HandOfMidas extends CustomRelic {
         if(target instanceof AbstractMonster)
         {
             AbstractMonster monster = (AbstractMonster)target;
-            if(monster.type == AbstractMonster.EnemyType.NORMAL)
-            {
+            if(monster.type == AbstractMonster.EnemyType.NORMAL) {
                 //trackpad.logger.info("monster type is NORMAL");
-                if(AbstractDungeon.cardRandomRng.random(99) < 10)
-                {
-                    this.flash();
-                    AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(monster, this));
-                    //CardCrawlGame.sound.play("GOLD_GAIN");
-                    for(int i = 0; i < monster.currentHealth; i++) {
-                        AbstractDungeon.effectList.add(new GainPennyEffect(AbstractDungeon.player, monster.hb.cX, monster.hb.cY, AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, false));
+                if (info.type == DamageInfo.DamageType.NORMAL) {
+                    if (AbstractDungeon.cardRandomRng.random(99) < 5) {
+                        this.flash();
+                        AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(monster, this));
+                        //CardCrawlGame.sound.play("GOLD_GAIN");
+                        for (int i = 0; i < monster.currentHealth; i++) {
+                            AbstractDungeon.effectList.add(new GainPennyEffect(AbstractDungeon.player, monster.hb.cX, monster.hb.cY, AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, false));
+                        }
+                        AbstractDungeon.player.gainGold(monster.currentHealth);
+                        monster.currentHealth = 0;
+                        monster.damage(new DamageInfo((AbstractCreature) null, 0, DamageInfo.DamageType.THORNS));
                     }
-                    AbstractDungeon.player.gainGold(monster.currentHealth);
-                    monster.currentHealth = 0;
-                    monster.damage(new DamageInfo((AbstractCreature)null, 0, DamageInfo.DamageType.THORNS));
                 }
             }
         }

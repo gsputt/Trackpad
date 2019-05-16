@@ -18,7 +18,7 @@ public class VoidSphere extends CustomRelic {
 
 
     public VoidSphere() {
-        super(ID, new Texture(IMG), new Texture(OUTLINE), RelicTier.UNCOMMON, LandingSound.MAGICAL);
+        super(ID, new Texture(IMG), new Texture(OUTLINE), RelicTier.SHOP, LandingSound.MAGICAL);
     }
 
     @Override

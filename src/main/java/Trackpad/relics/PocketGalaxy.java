@@ -18,7 +18,7 @@ public class PocketGalaxy extends CustomRelic implements triggerOnAnyDiscardReli
 
 
     public PocketGalaxy() {
-        super(ID, new Texture(IMG), new Texture(OUTLINE), RelicTier.RARE, LandingSound.FLAT);
+        super(ID, new Texture(IMG), new Texture(OUTLINE), RelicTier.SHOP, LandingSound.FLAT);
     }
 
     @Override

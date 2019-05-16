@@ -61,6 +61,7 @@ public class BottledAnger extends CustomRelic{
                         AbstractDungeon.player.hand.refreshHandLayout();
                         AbstractDungeon.player.hand.applyPowers();
                 }
+                angerList.clear();
                 this.isDone = true;
             }
         });

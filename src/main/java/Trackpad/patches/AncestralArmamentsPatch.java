@@ -41,14 +41,15 @@ public class AncestralArmamentsPatch {
     )
     public static class AbstractCardPatch {
         @SpirePostfixPatch
-        public static boolean ActualPatch(boolean __Result, AbstractCard __instance)
-        {
-            if(!__Result && __instance instanceof Shiv && AbstractDungeon.player.hasRelic(AncestralArmaments.ID)) {
+        public static boolean ActualPatch(boolean __Result, AbstractCard __instance) {
+            if (AbstractDungeon.player != null) {
+                if (!__Result && __instance instanceof Shiv && AbstractDungeon.player.hasRelic(AncestralArmaments.ID)) {
 
-                //__instance.upgraded = false;
-                return true;
+                    //__instance.upgraded = false;
+                    return true;
+                }
             }
-                return __Result;
+            return __Result;
         }
     }
 
