@@ -61,14 +61,15 @@ public class AncestralArmamentsPatch {
         @SpirePrefixPatch
         public static SpireReturn ActualPatch(Shiv __instance)
         {
-            if(AbstractDungeon.player.hasRelic(AncestralArmaments.ID))
-            {
-                __instance.baseDamage += 2 + __instance.timesUpgraded;
-                __instance.upgradedDamage = true;
-                __instance.upgraded = true;
-                __instance.timesUpgraded++;
-                __instance.name = Shiv.NAME + "+" + __instance.timesUpgraded;
-                return SpireReturn.Return(null);
+            if(AbstractDungeon.player != null) {
+                if (AbstractDungeon.player.hasRelic(AncestralArmaments.ID)) {
+                    __instance.baseDamage += 2 + __instance.timesUpgraded;
+                    __instance.upgradedDamage = true;
+                    __instance.upgraded = true;
+                    __instance.timesUpgraded++;
+                    __instance.name = Shiv.NAME + "+" + __instance.timesUpgraded;
+                    return SpireReturn.Return(null);
+                }
             }
             return SpireReturn.Continue();
         }
