@@ -41,7 +41,7 @@ public class PetRock extends CustomRelic {
             }
         }
         AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(weakestMonster,
-                new DamageInfo(AbstractDungeon.player, 2, DamageInfo.DamageType.THORNS),
+                new DamageInfo(AbstractDungeon.player, 5, DamageInfo.DamageType.THORNS),
                 AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         this.flash();
         AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(weakestMonster, this));

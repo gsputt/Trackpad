@@ -71,7 +71,7 @@ public class BottledAnger extends CustomRelic{
     @Override
     public void atBattleStartPreDraw()
     {
-        angerList.clear();
+        //angerList.clear();
         for(AbstractCard c: new ArrayList<>(AbstractDungeon.player.drawPile.group))
         {
             if(c.cardID.equals(Anger.ID) || c.cardID.equals("jedi:controlledanger") || c.cardID.equals("jedi:fear") || c.cardID.equals("jedi:hate"))

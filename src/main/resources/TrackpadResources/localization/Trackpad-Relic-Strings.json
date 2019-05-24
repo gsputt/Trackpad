@@ -3,7 +3,7 @@
 		"NAME": "Pocket Galaxy",
 		"FLAVOR": "A galaxy in the palm of your hand.",
 		"DESCRIPTIONS": [
-			"Whenever you discard a card, shuffle a random card into your draw pile. It costs #b1 less."
+			"Any time a card enters your discard pile, shuffle a random card into your draw pile. It costs #b1 less."
 		]
 	},
 	"trackpad:WondrousWand": {
@@ -217,21 +217,21 @@
 	},
 	"trackpad:BiPhaseBiplane": {
 		"NAME": "Bi-phase Biplane",
-		"FLAVOR": "Contrary to popular belief, this plane does not fly.",
+		"FLAVOR": "*Loud whirring noises*",
 		"DESCRIPTIONS": [
-			"At the start of your turn, add a random non-Status non-Curse card from your #yExhaust pile to your hand. it gains #ytrackpad:Purge and #ytrackpad:Spectral [REMOVE_SPACE]."
+			"At the start of your turn, put a random non-Status non-Curse card from your #yExhaust pile to your hand. it gains #yPurge and #ytrackpad:Spectral [REMOVE_SPACE]."
 		]
 	},
 	"trackpad:MiracleGrow": {
 		"NAME": "Miracle Grow",
-		"FLAVOR": "Guaranteed to increase growth speed or your money back.",
+		"FLAVOR": "Not approved by the FDA.",
 		"DESCRIPTIONS": [
-			"The passive of your Dark Orbs trigger a number of times equal to what slot they're in."
+			"The passive of your #yDark Orbs trigger a number of times equal to what slot they're in."
 		]
 	},
 	"trackpad:StolenKidneys": {
 		"NAME": "Stolen Kidneys",
-		"FLAVOR": "Illegally obtained, don't ask whose it is.",
+		"FLAVOR": "Wait. That's illegal.",
 		"DESCRIPTIONS": [
 			"Upon pickup, remove all Basic Strikes from your deck. At the start of each turn, draw a card until you draw a non-Basic card."
 		]
@@ -240,7 +240,14 @@
 		"NAME": "Demon Heart",
 		"FLAVOR": "Side effects include uncontrollable urges for world domination.",
 		"DESCRIPTIONS": [
-			"At the start of your turn, if you have 3 or more attacks in hand, gain [E]."
+			"At the start of your turn, if you have 3 or more attacks in hand, gain [E] [REMOVE_SPACE]."
+		]
+	},
+	"trackpad:RiggedDice": {
+		"NAME": "Rigged Dice",
+		"FLAVOR": "Critical Success",
+		"DESCRIPTIONS": [
+			"Whenever you discard a card, your next #yAttack this turn deals double damage."
 		]
 	},
 

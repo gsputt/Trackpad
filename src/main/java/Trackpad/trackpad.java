@@ -67,6 +67,7 @@ public class trackpad implements
     public static final String DISSIPATING_POWER = "powers/DissipatingPower.png";
     public static final String REFLECTION_POWER = "powers/ReflectionPower.png";
     public static final String FOCUSING_LENS_POWER = "powers/FocusingLensPower.png";
+    public static final String LUCKY_POWER = "powers/LuckyPower.png";
 
 
     // Relic images
@@ -132,6 +133,16 @@ public class trackpad implements
     public static final String BOTTLED_ANGER_OUTLINE = "relics/outline/BottledAngerOutline.png";
     public static final String BERSERKERS_DRAUGHT = "relics/BerserkersDraught.png";
     public static final String BERSERKERS_DRAUGHT_OUTLINE = "relics/outline/BerserkersDraughtOutline.png";
+    public static final String BIPHASE_BIPLANE = "relics/BiPhaseBiplane.png";
+    public static final String BIPHASE_BIPLANE_OUTLINE = "relics/outline/BiPhaseBiplaneOutline.png";
+    public static final String MIRACLE_GROW = "relics/MiracleGrow.png";
+    public static final String MIRACLE_GROW_OUTLINE = "relics/outline/MiracleGrowOutline.png";
+    public static final String STOLEN_KIDNEYS = "relics/StolenKidneys.png";
+    public static final String STOLEN_KIDNEYS_OUTLINE = "relics/outline/StolenKidneysOutline.png";
+    public static final String DEMON_HEART = "relics/DemonHeart.png";
+    public static final String DEMON_HEART_OUTLINE = "relics/outline/DemonHeartOutline.png";
+    public static final String RIGGED_DICE = "relics/RiggedDice.png";
+    public static final String RIGGED_DICE_OUTLINE = "relics/outline/RiggedDiceOutline.png";
 
     //Custom VFX
 
@@ -269,6 +280,11 @@ public class trackpad implements
         BaseMod.addRelic(new FocusingLens(), RelicType.BLUE);
         BaseMod.addRelic(new BottledAnger(), RelicType.RED);
         BaseMod.addRelic(new BerserkersDraught(), RelicType.RED);
+        BaseMod.addRelic(new BiPhaseBiplane(), RelicType.SHARED);
+        BaseMod.addRelic(new MiracleGrow(), RelicType.BLUE);
+        BaseMod.addRelic(new StolenKidneys(), RelicType.SHARED);
+        BaseMod.addRelic(new DemonHeart(), RelicType.RED);
+        BaseMod.addRelic(new RiggedDice(), RelicType.GREEN);
 
         // This adds a character specific relic. Only when you play with the mentioned color, will you get this relic.
         //BaseMod.addRelicToCustomPool(new StarterRelic2(), AbstractCardEnum.SCRIBE_BLUE);
@@ -314,8 +330,11 @@ public class trackpad implements
 
     @Override
     public void receiveEditKeywords() {
-        final String[] Envenom = { "Envenom"};
+        final String[] Envenom = {"Envenom"};
         BaseMod.addKeyword("trackpad", "Envenom", Envenom, "Whenever an attack deals unblocked damage, apply 1 Poison.");
+
+        final String[] Spectral = {"Spectral", "spectral"};
+        BaseMod.addKeyword("trackpad", "Spectral", Spectral, "Purged from your hand at the end of your turn.");
 
         /*
         final String[] Cast = { "Cast", "casts", "cast"};

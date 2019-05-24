@@ -10,5 +10,9 @@
   "trackpad:FocusingLensPower": {
     "NAME": "Focusing Lens Target",
     "DESCRIPTIONS": ["ALL #yLightning orbs will target this enemy."]
+  },
+  "trackpad:LuckyPower": {
+    "NAME": "Lucky",
+    "DESCRIPTIONS": ["Your next #yAttack deals double damage."]
   }
 }
