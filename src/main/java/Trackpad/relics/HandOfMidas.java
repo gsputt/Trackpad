@@ -5,6 +5,7 @@ import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
+import com.megacrit.cardcrawl.actions.common.SuicideAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -45,8 +46,10 @@ public class HandOfMidas extends CustomRelic {
                             AbstractDungeon.effectList.add(new GainPennyEffect(AbstractDungeon.player, monster.hb.cX, monster.hb.cY, AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, false));
                         }
                         AbstractDungeon.player.gainGold(monster.currentHealth);
-                        monster.currentHealth = 0;
-                        monster.damage(new DamageInfo((AbstractCreature) null, 0, DamageInfo.DamageType.THORNS));
+                        monster.currentHealth = 0;// 25
+                        monster.die(true);// 26
+                        monster.healthBarUpdatedEvent();// 27
+                        //monster.damage(new DamageInfo((AbstractCreature) null, 0, DamageInfo.DamageType.THORNS));
                     }
                 }
             }

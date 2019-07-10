@@ -1,10 +1,10 @@
 {
-  "modid": "Trackpad",
-  "name": "Trackpad",
+  "modid": "${project.groupId}",
+  "name": "${project.name}",
   "author_list": ["Left Click", "ComingVirus"],
   "description": "Relic Expansion mod.",
-  "version": "0.0.6",
-  "sts_version": "01-23-2019",
-  "mts_version": "3.8.0",
+  "version": "0.0.8",
+  "sts_version": "${SlayTheSpire.version}",
+  "mts_version": "${ModTheSpire.version}",
   "dependencies": ["basemod", "stslib"]
 }

@@ -36,7 +36,7 @@ public class BottledShadow extends CustomRelic implements CustomBottleRelic, Cus
 
     @Override
     public void onUseCard(AbstractCard targetCard, UseCardAction useCardAction) {
-        if(Trackpad.patches.BottledShadowField.inBottledShadow.get(targetCard) && !targetCard.purgeOnUse)
+        if(BottledShadowField.inBottledShadow.get(targetCard) && !targetCard.purgeOnUse)
         {
             this.flash();
             AbstractMonster m = null;

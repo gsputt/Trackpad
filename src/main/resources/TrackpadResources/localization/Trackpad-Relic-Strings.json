@@ -61,7 +61,7 @@
 		"NAME": "Pet Rock",
 		"FLAVOR": "Remember to feed your pet rock once every 6 hours.",
 		"DESCRIPTIONS": [
-			"At the start of each turn, deal #b2 damage to the enemy with the least HP."
+			"At the start of each turn, deal #b5 damage to the enemy with the least HP."
 		]
 	},
 	"trackpad:WindUpAutoDealer": {
@@ -124,7 +124,7 @@
 		"NAME": "Bottled Tsunami",
 		"FLAVOR": "Open for infinite water.",
 		"DESCRIPTIONS": [
-			"Upon pickup, choose a card. When you draw that card, add #b2 copies with #yEthereal and #yExhaust to your hand.",
+			"Upon pickup, choose a card. When you play that card, add #b2 copies with #yEthereal and #yExhaust to your hand.",
 			"Choose a card for ",
 			" will add #b2 copies of itself with #yEthereal and #yExhaust to your hand when drawn."
 		]
@@ -248,6 +248,13 @@
 		"FLAVOR": "Critical Success",
 		"DESCRIPTIONS": [
 			"Whenever you discard a card, your next #yAttack this turn deals double damage."
+		]
+	},
+	"trackpad:Trackpad": {
+		"NAME": "Trackpad",
+		"FLAVOR": "Doesn't quite function correctly",
+		"DESCRIPTIONS": [
+			"Gain [E] at the start of each turn. Your mouse jiggles uncontrollably."
 		]
 	},
 

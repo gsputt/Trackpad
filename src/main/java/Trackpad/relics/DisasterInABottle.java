@@ -41,7 +41,7 @@ public class DisasterInABottle extends CustomRelic implements CustomBottleRelic,
 
     @Override
     public void onPlayCard(AbstractCard c, AbstractMonster m) {
-        if(Trackpad.patches.DisasterInABottleField.inDisasterInABottle.get(c))
+        if(DisasterInABottleField.inDisasterInABottle.get(c))
         {
             this.flash();
 

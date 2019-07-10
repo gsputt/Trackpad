@@ -4,6 +4,7 @@ import Trackpad.relics.*;
 import basemod.BaseMod;
 import basemod.ModLabel;
 import basemod.ModPanel;
+import basemod.devcommands.relic.Relic;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.graphics.Color;
@@ -13,6 +14,7 @@ import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.monsters.city.Byrd;
 import com.megacrit.cardcrawl.monsters.city.Snecko;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -143,6 +145,8 @@ public class trackpad implements
     public static final String DEMON_HEART_OUTLINE = "relics/outline/DemonHeartOutline.png";
     public static final String RIGGED_DICE = "relics/RiggedDice.png";
     public static final String RIGGED_DICE_OUTLINE = "relics/outline/RiggedDiceOutline.png";
+    public static final String TRACKPAD = "relics/TrackpadRelic.png";
+    public static final String TRACKPAD_OUTLINE = "relics/outline/TrackpadRelicOutline.png";
 
     //Custom VFX
 
@@ -285,6 +289,44 @@ public class trackpad implements
         BaseMod.addRelic(new StolenKidneys(), RelicType.SHARED);
         BaseMod.addRelic(new DemonHeart(), RelicType.RED);
         BaseMod.addRelic(new RiggedDice(), RelicType.GREEN);
+        BaseMod.addRelic(new Trackpad(), RelicType.SHARED);
+
+        UnlockTracker.markRelicAsSeen(PocketGalaxy.ID);
+        UnlockTracker.markRelicAsSeen(WondrousWand.ID);
+        UnlockTracker.markRelicAsSeen(DisasterInABottle.ID);
+        UnlockTracker.markRelicAsSeen(VoidSphere.ID);
+        UnlockTracker.markRelicAsSeen(ZombieHeart.ID);
+        UnlockTracker.markRelicAsSeen(AdjectivePendant.ID);
+        UnlockTracker.markRelicAsSeen(CultistFigurine.ID);
+        UnlockTracker.markRelicAsSeen(Compendium.ID);
+        UnlockTracker.markRelicAsSeen(PetRock.ID);
+        UnlockTracker.markRelicAsSeen(WindUpAutoDealer.ID);
+        UnlockTracker.markRelicAsSeen(Mousetrap.ID);
+        UnlockTracker.markRelicAsSeen(GuardianSpirit.ID);
+        UnlockTracker.markRelicAsSeen(HandOfMidas.ID);
+        UnlockTracker.markRelicAsSeen(SappingStone.ID);
+        UnlockTracker.markRelicAsSeen(SneckoScepter.ID);
+        UnlockTracker.markRelicAsSeen(ByrdCharm.ID);
+        UnlockTracker.markRelicAsSeen(ToughGloves.ID);
+        UnlockTracker.markRelicAsSeen(BottledTsunami.ID);
+        UnlockTracker.markRelicAsSeen(RapidFire.ID);
+        UnlockTracker.markRelicAsSeen(BottledShadow.ID);
+        UnlockTracker.markRelicAsSeen(WritersBlock.ID);
+        UnlockTracker.markRelicAsSeen(NeutrinoGenerator.ID);
+        UnlockTracker.markRelicAsSeen(StainlessSteel.ID);
+        UnlockTracker.markRelicAsSeen(ChainingVapors.ID);
+        UnlockTracker.markRelicAsSeen(WeightlessShivs.ID);
+        UnlockTracker.markRelicAsSeen(AncestralArmaments.ID);
+        UnlockTracker.markRelicAsSeen(IciclePrecepts.ID);
+        UnlockTracker.markRelicAsSeen(FocusingLens.ID);
+        UnlockTracker.markRelicAsSeen(BottledAnger.ID);
+        UnlockTracker.markRelicAsSeen(BerserkersDraught.ID);
+        UnlockTracker.markRelicAsSeen(BiPhaseBiplane.ID);
+        UnlockTracker.markRelicAsSeen(MiracleGrow.ID);
+        UnlockTracker.markRelicAsSeen(StolenKidneys.ID);
+        UnlockTracker.markRelicAsSeen(DemonHeart.ID);
+        UnlockTracker.markRelicAsSeen(RiggedDice.ID);
+        UnlockTracker.markRelicAsSeen(Trackpad.ID);
 
         // This adds a character specific relic. Only when you play with the mentioned color, will you get this relic.
         //BaseMod.addRelicToCustomPool(new StarterRelic2(), AbstractCardEnum.SCRIBE_BLUE);

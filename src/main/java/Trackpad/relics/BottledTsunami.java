@@ -7,6 +7,7 @@ import basemod.abstracts.CustomBottleRelic;
 import basemod.abstracts.CustomRelic;
 import basemod.abstracts.CustomSavable;
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -33,13 +34,14 @@ public class BottledTsunami extends CustomRelic implements CustomBottleRelic, Cu
     }
 
     @Override
-    public void onCardDraw(AbstractCard c) {
-        if(Trackpad.patches.BottledTsunamiField.inBottledTsunami.get(c))
+    public void onUseCard(AbstractCard c, UseCardAction useCardAction) {
+        if(BottledTsunamiField.inBottledTsunami.get(c))
         {
             this.flash();
             for(int i = 0; i < 2; i++)
             {
                 AbstractCard card = c.makeStatEquivalentCopy();
+                BottledTsunamiField.inBottledTsunami.set(card, false);
                 if (card.exhaust == false) {
                     card.exhaust = true;
                     card.rawDescription += " NL Exhaust.";
