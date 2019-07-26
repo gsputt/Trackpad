@@ -96,7 +96,7 @@
 		"NAME": "Sapping Stone",
 		"FLAVOR": "Saps away the strength of others.",
 		"DESCRIPTIONS": [
-			"At the start of each combat, ALL enemies lose #b1 #yStrength until the end of their turn."
+			"At the start of each combat, ALL enemies lose #b3 #yStrength until the end of their turn."
 		]
 	},
 	"trackpad:SneckoScepter": {

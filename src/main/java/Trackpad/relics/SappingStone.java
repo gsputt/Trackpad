@@ -20,6 +20,7 @@ public class SappingStone extends CustomRelic {
     public static final String IMG = trackpad.makePath(trackpad.SAPPING_STONE);
     public static final String OUTLINE = trackpad.makePath(trackpad.SAPPING_STONE_OUTLINE);
 
+    private static final int SAPPED_AMOUNT = 3;
 
     public SappingStone() {
         super(ID, new Texture(IMG), new Texture(OUTLINE), RelicTier.COMMON, LandingSound.MAGICAL);
@@ -34,9 +35,9 @@ public class SappingStone extends CustomRelic {
         {
             m = AbstractDungeon.getCurrRoom().monsters.monsters.get(i);
             AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(m, this));
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, AbstractDungeon.player, new StrengthPower(m, -1), -1));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, AbstractDungeon.player, new StrengthPower(m, -SAPPED_AMOUNT), -SAPPED_AMOUNT));
             if (m != null && !m.hasPower("Artifact")) {
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, AbstractDungeon.player, new GainStrengthPower(m, 1), 1));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, AbstractDungeon.player, new GainStrengthPower(m, SAPPED_AMOUNT), SAPPED_AMOUNT));
             }
             i++;
         }
