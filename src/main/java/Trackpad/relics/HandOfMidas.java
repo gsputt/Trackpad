@@ -46,10 +46,11 @@ public class HandOfMidas extends CustomRelic {
                             AbstractDungeon.effectList.add(new GainPennyEffect(AbstractDungeon.player, monster.hb.cX, monster.hb.cY, AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, false));
                         }
                         AbstractDungeon.player.gainGold(monster.currentHealth);
-                        monster.currentHealth = 0;// 25
-                        monster.die(true);// 26
-                        monster.healthBarUpdatedEvent();// 27
-                        //monster.damage(new DamageInfo((AbstractCreature) null, 0, DamageInfo.DamageType.THORNS));
+                        monster.currentHealth = 0;
+                        monster.damage(new DamageInfo((AbstractCreature) null, 1, DamageInfo.DamageType.THORNS));
+                        //monster.die(true);
+                        monster.healthBarUpdatedEvent();
+
                     }
                 }
             }
