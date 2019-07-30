@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -26,33 +27,12 @@ public class NeutrinoGenerator extends CustomRelic {
     }
 
     @Override
-    public void onPlayCard(AbstractCard c, AbstractMonster m) {
-        if(c.costForTurn == 0)
+    public void onUseCard(AbstractCard c, UseCardAction action) {
+        if((c.energyOnUse >= 2 || c.costForTurn >= 2) && !c.freeToPlayOnce)
         {
             this.flash();
             AbstractDungeon.actionManager.addToBottom(new ChannelAction(AbstractOrb.getRandomOrb(true)));
         }
-        else if(c.costForTurn == 1)
-        {
-            this.flash();
-            AbstractDungeon.actionManager.addToBottom(new ChannelAction(new Lightning()));
-        }
-        else if(c.costForTurn == 2)
-        {
-            this.flash();
-            AbstractDungeon.actionManager.addToBottom(new ChannelAction(new Frost()));
-        }
-        else if(c.costForTurn == 3)
-        {
-            this.flash();
-            AbstractDungeon.actionManager.addToBottom(new ChannelAction(new Dark()));
-        }
-        else if(c.costForTurn == -1)
-        {
-            this.flash();
-            AbstractDungeon.actionManager.addToBottom(new ChannelAction(new Plasma()));
-        }
-
     }
 
     // Description

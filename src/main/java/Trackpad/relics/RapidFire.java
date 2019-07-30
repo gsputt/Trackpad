@@ -1,16 +1,15 @@
 package Trackpad.relics;
 
+import Trackpad.relicInterfaces.onAttackToChangeDamageWithTargetRelicHook;
 import Trackpad.trackpad;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
-public class RapidFire extends CustomRelic {
+public class RapidFire extends CustomRelic implements onAttackToChangeDamageWithTargetRelicHook {
 
     // ID, images, text.
     public static final String ID = trackpad.makeID("RapidFire");
@@ -22,8 +21,12 @@ public class RapidFire extends CustomRelic {
         super(ID, new Texture(IMG), new Texture(OUTLINE), RelicTier.UNCOMMON, LandingSound.MAGICAL);
     }
 
-    public int onAttackedMonster(DamageInfo info, int damageAmount) {
-        if (info.owner != null && info.type != DamageInfo.DamageType.HP_LOSS && info.type != DamageInfo.DamageType.THORNS && damageAmount > 0) {
+    @Override
+    public int changeAttackDamageWithTarget(DamageInfo info, int damageAmount, AbstractCreature target)
+    {
+        //System.out.println("Relic got called");
+        if(info.owner != null && info.owner == AbstractDungeon.player && info.owner != target)
+        {
             this.flash();
             return damageAmount + 2;
         }
@@ -31,6 +34,17 @@ public class RapidFire extends CustomRelic {
             return damageAmount;
         }
     }
+
+    /*@Override
+    public int onAttackToChangeDamage(DamageInfo info, int damageAmount) {
+        if (info.owner == AbstractDungeon.player) {
+            this.flash();
+            return damageAmount + 2;
+        }
+        else {
+            return damageAmount;
+        }
+    }*/
 
 
     // Description

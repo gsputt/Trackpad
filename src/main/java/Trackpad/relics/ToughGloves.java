@@ -19,12 +19,12 @@ public class ToughGloves extends CustomRelic {
     public static final String OUTLINE = trackpad.makePath(trackpad.TOUGH_GLOVES_OUTLINE);
 
     public ToughGloves() {
-        super(ID, new Texture(IMG), new Texture(OUTLINE), RelicTier.COMMON, LandingSound.FLAT);
+        super(ID, new Texture(IMG), new Texture(OUTLINE), RelicTier.RARE, LandingSound.FLAT);
     }
 
     @Override
     public int onAttacked(DamageInfo info, int damageAmount) {
-        if(info.type == DamageInfo.DamageType.THORNS && info.owner instanceof AbstractMonster && info.owner.hasPower(ThornsPower.POWER_ID))
+        if(info.type == DamageInfo.DamageType.THORNS) //&& info.owner instanceof AbstractMonster && info.owner.hasPower(ThornsPower.POWER_ID))
         {
             this.flash();
             return 0;

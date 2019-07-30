@@ -3,7 +3,7 @@
   "name": "${project.name}",
   "author_list": ["Left Click", "ComingVirus"],
   "description": "Relic Expansion mod.",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "sts_version": "${SlayTheSpire.version}",
   "mts_version": "${ModTheSpire.version}",
   "dependencies": ["basemod", "stslib"]

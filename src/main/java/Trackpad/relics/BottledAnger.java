@@ -39,9 +39,8 @@ public class BottledAnger extends CustomRelic{
     }
 
     @Override
-    public void onEquip()
-    {
-        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Anger(), (float) Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
+    public int changeNumberOfCardsInReward(int numberOfCards) {
+        return numberOfCards + 1;
     }
 
     @Override

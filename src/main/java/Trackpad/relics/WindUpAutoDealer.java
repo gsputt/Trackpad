@@ -21,7 +21,7 @@ public class WindUpAutoDealer extends CustomRelic implements ClickableRelic {
 
 
     public WindUpAutoDealer() {
-        super(ID, new Texture(IMG), new Texture(OUTLINE), RelicTier.UNCOMMON, LandingSound.SOLID);
+        super(ID, new Texture(IMG), new Texture(OUTLINE), RelicTier.RARE, LandingSound.SOLID);
     }
 
     @Override

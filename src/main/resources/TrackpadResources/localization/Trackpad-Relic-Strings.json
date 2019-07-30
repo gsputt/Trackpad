@@ -117,7 +117,7 @@
 		"NAME": "Tough Gloves",
 		"FLAVOR": "Guaranteed to protect you from thorns, or your money back.",
 		"DESCRIPTIONS": [
-			"Take no thorns damage from enemies."
+			"Take no thorns type damage from enemies."
 		]
 	},
 	"trackpad:BottledTsunami": {
@@ -133,7 +133,7 @@
 		"NAME": "Rapid Fire",
 		"FLAVOR": "Fire that moves veryily fastily.",
 		"DESCRIPTIONS": [
-			"Whenever you deal attack damage, increase it by 2."
+			"Whenever you deal damage to an enemy, increase it by 2."
 		]
 	},
 	"trackpad:BottledShadow": {
@@ -156,7 +156,7 @@
 		"NAME": "Neutrino Generator",
 		"FLAVOR": "Has a known side effect of being hard to pronounce.",
 		"DESCRIPTIONS": [
-			"Whenever you play a card, #yChannel an orb based on its cost. #b0 - Random Orb. #b1 - #yLightning Orb. #b2 - #yFrost Orb. #b3 - #yDark Orb. #bX - #yPlasma Orb."
+			"Whenever you spend 2 or more energy on a card, #yChannel a random Orb."
 		]
 	},
 	"trackpad:StainlessSteel": {
@@ -205,7 +205,7 @@
 		"NAME": "Bottled Anger",
 		"FLAVOR": "Not actually a bottle relic.",
 		"DESCRIPTIONS": [
-			"At the start of each combat, draw all Angers from your deck. Can overfill your hand. Upon pickup, add an Anger to your deck."
+			"At the start of each combat, draw all Angers from your deck. Can overfill your hand. Future card rewards have #b1 more card to choose from. The last card in future card rewards will be an Anger."
 		]
 	},
 	"trackpad:BerserkersDraught": {
