@@ -47,14 +47,14 @@
 		"NAME": "Cultist Figurine",
 		"FLAVOR": "Collect them all!",
 		"DESCRIPTIONS": [
-			"Gain 1 #yStrength every #b3 turns."
+			"Gain #b1 #yStrength every #b3 turns."
 		]
 	},
 	"trackpad:Compendium": {
 		"NAME": "Compendium",
 		"FLAVOR": "How to win the game in 3 easy steps.",
 		"DESCRIPTIONS": [
-			"At the start of each combat, add a random Rare card to your draw pile. It costs 1 less."
+			"At the start of each combat, add a random Rare card to your draw pile. It costs #b1 less."
 		]
 	},
 	"trackpad:PetRock": {
@@ -75,7 +75,7 @@
 		"NAME": "Mousetrap",
 		"FLAVOR": "Watch your fingers.",
 		"DESCRIPTIONS": [
-			"The first time you get attacked each combat, deal 15 damage to the attacker."
+			"The first time you get attacked each combat, deal #b15 damage to the attacker."
 		]
 	},
 	"trackpad:GuardianSpirit": {
@@ -110,7 +110,7 @@
 		"NAME": "Byrd Charm",
 		"FLAVOR": "Lets you float. A little.",
 		"DESCRIPTIONS": [
-			"At the start of combat, gain 1 #yFlight."
+			"At the start of combat, gain #b1 #yFlight."
 		]
 	},
 	"trackpad:ToughGloves": {
@@ -133,7 +133,7 @@
 		"NAME": "Rapid Fire",
 		"FLAVOR": "Fire that moves veryily fastily.",
 		"DESCRIPTIONS": [
-			"Whenever you deal damage to an enemy, increase it by 2."
+			"Whenever you deal damage to an enemy, increase it by #b2."
 		]
 	},
 	"trackpad:BottledShadow": {
@@ -156,7 +156,7 @@
 		"NAME": "Neutrino Generator",
 		"FLAVOR": "Has a known side effect of being hard to pronounce.",
 		"DESCRIPTIONS": [
-			"Whenever you spend 2 or more energy on a card, #yChannel a random Orb."
+			"Whenever you spend #b2 or more energy on a card, #yChannel a random Orb."
 		]
 	},
 	"trackpad:StainlessSteel": {
@@ -205,7 +205,7 @@
 		"NAME": "Bottled Anger",
 		"FLAVOR": "Not actually a bottle relic.",
 		"DESCRIPTIONS": [
-			"At the start of each combat, draw all Angers from your deck. Can overfill your hand. Future card rewards have #b1 more card to choose from. The last card in future card rewards will be an Anger."
+			"At the start of each combat, put all Angers from your deck into your hand. Can overfill your hand. Future card rewards have #b1 more card to choose from. The last card in future card rewards will always be an Anger."
 		]
 	},
 	"trackpad:BerserkersDraught": {
@@ -240,14 +240,14 @@
 		"NAME": "Demon Heart",
 		"FLAVOR": "Side effects include uncontrollable urges for world domination.",
 		"DESCRIPTIONS": [
-			"At the start of your turn, if you have 3 or more attacks in hand, gain [E] [REMOVE_SPACE]."
+			"At the start of your turn, if you have #b3 or more attacks in hand, gain [E] [REMOVE_SPACE]."
 		]
 	},
 	"trackpad:RiggedDice": {
 		"NAME": "Rigged Dice",
 		"FLAVOR": "Critical Success",
 		"DESCRIPTIONS": [
-			"Whenever you discard a card, your next #yAttack this turn deals double damage."
+			"Whenever you #ydiscard a card, your next #yAttack this turn deals double damage."
 		]
 	},
 	"trackpad:Trackpad": {
@@ -255,6 +255,34 @@
 		"FLAVOR": "Doesn't quite function correctly",
 		"DESCRIPTIONS": [
 			"Gain [E] at the start of each turn. Your mouse jiggles uncontrollably."
+		]
+	},
+	"trackpad:Coffee": {
+		"NAME": "Coffee",
+		"FLAVOR": "A quick caffeine boost that leaves you feeling a little de-energized later",
+		"DESCRIPTIONS": [
+			"Gain [E] at the start of each turn. Every #b3 turns, add a #yVoid to the top of your draw pile."
+		]
+	},
+	"trackpad:IceCube": {
+		"NAME": "Ice Cube",
+		"FLAVOR": "Its melting",
+		"DESCRIPTIONS": [
+			"At the start of combat, gain #b3 #yDexterity. At the end of the first #b3 turns of combat, lose #b1 #yDexterity."
+		]
+	},
+	"trackpad:ByrdBGone": {
+		"NAME": "Byrd-B-Gone",
+		"FLAVOR": "These Byrd spikes seem a little situational",
+		"DESCRIPTIONS": [
+			"Whenever you are attacked and don't lose health, gain 1 #yThorns."
+		]
+	},
+	"trackpad:FieryHotPepper": {
+		"NAME": "Fiery Hot Pepper",
+		"FLAVOR": "Consumption not recommended unless you're a fan of spontaneous combustion.",
+		"DESCRIPTIONS": [
+			"At the start of combat, play a #yFire #yBreathing"
 		]
 	},
 

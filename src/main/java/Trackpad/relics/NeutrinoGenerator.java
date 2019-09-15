@@ -28,7 +28,7 @@ public class NeutrinoGenerator extends CustomRelic {
 
     @Override
     public void onUseCard(AbstractCard c, UseCardAction action) {
-        if((c.energyOnUse >= 2 || c.costForTurn >= 2) && !c.freeToPlayOnce)
+        if(((c.cost == -1 && !c.ignoreEnergyOnUse && c.energyOnUse >= 2) || c.costForTurn >= 2) && !c.freeToPlayOnce)
         {
             this.flash();
             AbstractDungeon.actionManager.addToBottom(new ChannelAction(AbstractOrb.getRandomOrb(true)));

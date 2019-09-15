@@ -147,6 +147,14 @@ public class trackpad implements
     public static final String RIGGED_DICE_OUTLINE = "relics/outline/RiggedDiceOutline.png";
     public static final String TRACKPAD = "relics/TrackpadRelic.png";
     public static final String TRACKPAD_OUTLINE = "relics/outline/TrackpadRelicOutline.png";
+    public static final String COFFEE = "relics/Coffee.png";
+    public static final String COFFEE_OUTLINE = "relics/outline/CoffeeOutline.png";
+    public static final String ICE_CUBE = "relics/IceCube.png";
+    public static final String ICE_CUBE_OUTLINE = "relics/outline/IceCubeOutline.png";
+    public static final String BYRD_B_GONE = "relics/ByrdBGone.png";
+    public static final String BYRD_B_GONE_OUTLINE = "relics/outline/ByrdBGoneOutline.png";
+    public static final String FIERY_HOT_PEPPER = "relics/FieryHotPepper.png";
+    public static final String FIERY_HOT_PEPPER_OUTLINE = "relics/outline/FieryHotPepperOutline.png";
 
     //Custom VFX
 
@@ -290,6 +298,10 @@ public class trackpad implements
         BaseMod.addRelic(new DemonHeart(), RelicType.RED);
         BaseMod.addRelic(new RiggedDice(), RelicType.GREEN);
         BaseMod.addRelic(new Trackpad(), RelicType.SHARED);
+        BaseMod.addRelic(new Coffee(), RelicType.SHARED);
+        BaseMod.addRelic(new IceCube(), RelicType.SHARED);
+        BaseMod.addRelic(new ByrdBGone(), RelicType.SHARED);
+        BaseMod.addRelic(new FieryHotPepper(), RelicType.SHARED);
 
         UnlockTracker.markRelicAsSeen(PocketGalaxy.ID);
         UnlockTracker.markRelicAsSeen(WondrousWand.ID);
@@ -327,6 +339,10 @@ public class trackpad implements
         UnlockTracker.markRelicAsSeen(DemonHeart.ID);
         UnlockTracker.markRelicAsSeen(RiggedDice.ID);
         UnlockTracker.markRelicAsSeen(Trackpad.ID);
+        UnlockTracker.markRelicAsSeen(Coffee.ID);
+        UnlockTracker.markRelicAsSeen(IceCube.ID);
+        UnlockTracker.markRelicAsSeen(ByrdBGone.ID);
+        UnlockTracker.markRelicAsSeen(FieryHotPepper.ID);
 
         // This adds a character specific relic. Only when you play with the mentioned color, will you get this relic.
         //BaseMod.addRelicToCustomPool(new StarterRelic2(), AbstractCardEnum.SCRIBE_BLUE);
@@ -377,6 +393,10 @@ public class trackpad implements
 
         final String[] Spectral = {"Spectral", "spectral"};
         BaseMod.addKeyword("trackpad", "Spectral", Spectral, "Purged from your hand at the end of your turn.");
+
+        final String[] Thorns = {"Thorns", "thorns", "thorn", "thorns"};
+        BaseMod.addKeyword("trackpad", "Thorns", Thorns, "Whenever you are attacked, deal damage to the attacker.");
+
 
         /*
         final String[] Cast = { "Cast", "casts", "cast"};

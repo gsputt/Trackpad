@@ -25,7 +25,7 @@ public class Trackpad extends CustomRelic {
     @Override
     public void update() {
         super.update();
-        if (AbstractDungeon.player != null && AbstractDungeon.getCurrRoom() != null && Display.isActive() && AbstractDungeon.screen != null && AbstractDungeon.screen != AbstractDungeon.CurrentScreen.SETTINGS && AbstractDungeon.screen != AbstractDungeon.CurrentScreen.INPUT_SETTINGS && AbstractDungeon.player.hasRelic(ID)) {
+        if (AbstractDungeon.player != null && AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom() != null && Display.isActive() && AbstractDungeon.screen != null && AbstractDungeon.screen != AbstractDungeon.CurrentScreen.SETTINGS && AbstractDungeon.screen != AbstractDungeon.CurrentScreen.INPUT_SETTINGS && AbstractDungeon.player.hasRelic(ID)) {
             Mouse.setCursorPosition(Mouse.getX() + (int)(MathUtils.random(-10, 10) * Settings.scale), Mouse.getY() + (int)(MathUtils.random(-10, 10) * Settings.scale));
         }
 
