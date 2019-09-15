@@ -282,7 +282,7 @@
 		"NAME": "Fiery Hot Pepper",
 		"FLAVOR": "Consumption not recommended unless you're a fan of spontaneous combustion.",
 		"DESCRIPTIONS": [
-			"At the start of combat, shuffle #b2 #yBurns into your draw pile. Whenever you draw a #yBurn [REMOVE_SPACE], deal #b8 damage to ALL enemies, and #ydiscard it."
+			"At the start of combat, shuffle #b2 #yBurns into your draw pile. Whenever you draw a #yBurn [REMOVE_SPACE], deal #b8 damage to ALL enemies and discard it."
 		]
 	},
 
