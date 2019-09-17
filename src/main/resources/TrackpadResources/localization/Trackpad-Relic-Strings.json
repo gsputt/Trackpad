@@ -254,7 +254,7 @@
 		"NAME": "Trackpad",
 		"FLAVOR": "Doesn't quite function correctly",
 		"DESCRIPTIONS": [
-			"Gain [E] at the start of each turn. Your mouse jiggles uncontrollably."
+			"Gain [E] at the start of each turn. Every #b3 to #b5 seconds, this relic hijacks your cursor and moves it to a random nearby spot."
 		]
 	},
 	"trackpad:Coffee": {
