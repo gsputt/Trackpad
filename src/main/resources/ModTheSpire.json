@@ -2,8 +2,8 @@
   "modid": "${project.groupId}",
   "name": "${project.name}",
   "author_list": ["Left Click", "ComingVirus"],
-  "description": "Relic Expansion mod.",
-  "version": "0.0.17",
+  "description": "${project.description}",
+  "version": "${project.version}",
   "sts_version": "${SlayTheSpire.version}",
   "mts_version": "${ModTheSpire.version}",
   "dependencies": ["basemod", "stslib"]

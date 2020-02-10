@@ -3,21 +3,12 @@ package Trackpad.relics;
 import Trackpad.actions.StolenKidneysDrawAction;
 import Trackpad.trackpad;
 import basemod.abstracts.CustomRelic;
-import basemod.helpers.BaseModCardTags;
 import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.cards.blue.Strike_Blue;
-import com.megacrit.cardcrawl.cards.green.Strike_Green;
-import com.megacrit.cardcrawl.cards.red.Strike_Red;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class StolenKidneys extends CustomRelic {
 
@@ -44,7 +35,7 @@ public class StolenKidneys extends CustomRelic {
         ArrayList<AbstractCard> removeList = new ArrayList<>();
         for(AbstractCard c : AbstractDungeon.player.masterDeck.group)
         {
-            if(c.hasTag(BaseModCardTags.BASIC_STRIKE) || c instanceof Strike_Red || c instanceof Strike_Green || c instanceof Strike_Blue)
+            if(c.hasTag(AbstractCard.CardTags.STARTER_STRIKE))
             {
                 removeList.add(c);
             }

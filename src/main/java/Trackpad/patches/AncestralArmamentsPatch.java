@@ -9,12 +9,19 @@ import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.colorless.Shiv;
+import com.megacrit.cardcrawl.cards.tempCards.Shiv;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
+
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 
 
 public class AncestralArmamentsPatch {
+
+    private static final CardStrings cardStringsForShiv;
 
     @SpirePatch(
             clz = MakeTempCardInHandAction.class,
@@ -28,9 +35,25 @@ public class AncestralArmamentsPatch {
         @SpirePostfixPatch
         public static void ActualPatch(MakeTempCardInHandAction __instance, AbstractCard card, int amount) {
             if (card instanceof Shiv && AbstractDungeon.player.hasRelic(AncestralArmaments.ID)) {
-                AbstractCard shiv = card.makeStatEquivalentCopy();
+                AbstractCard shiv = (AbstractCard)ReflectionHacks.getPrivate(__instance, MakeTempCardInHandAction.class, "c");
                 shiv.upgrade();
-                ReflectionHacks.setPrivate(__instance, MakeTempCardInHandAction.class, "c", shiv);
+            }
+        }
+    }
+    @SpirePatch(
+            clz = MakeTempCardInHandAction.class,
+            method = SpirePatch.CONSTRUCTOR,
+            paramtypez = {
+                    AbstractCard.class,
+                    boolean.class
+            }
+    )
+    public static class IDontKnowHowToDoThisProperly {
+        @SpirePostfixPatch
+        public static void ActualPatch(MakeTempCardInHandAction __instance, AbstractCard card, boolean isOtherCardInCenter) {
+            if (card instanceof Shiv && AbstractDungeon.player.hasRelic(AncestralArmaments.ID)) {
+                AbstractCard shiv = (AbstractCard) ReflectionHacks.getPrivate(__instance, MakeTempCardInHandAction.class, "c");
+                shiv.upgrade();
             }
         }
     }
@@ -57,22 +80,56 @@ public class AncestralArmamentsPatch {
             clz = Shiv.class,
             method = "upgrade"
     )
-    public static class ShivPatch {
+    public static class ShivUpgradeShenanigans {
         @SpirePrefixPatch
-        public static SpireReturn ActualPatch(Shiv __instance)
+        public static SpireReturn<AbstractCard> ActualPatch(Shiv __instance)
         {
+
             if(AbstractDungeon.player != null) {
                 if (AbstractDungeon.player.hasRelic(AncestralArmaments.ID)) {
-                    __instance.baseDamage += 2 + __instance.timesUpgraded;
-                    __instance.upgradedDamage = true;
+                    try {
+                        Method iTouchTheProtectedStuff = AbstractCard.class.getDeclaredMethod("upgradeDamage", int.class);
+                        iTouchTheProtectedStuff.setAccessible(true);
+                        iTouchTheProtectedStuff.invoke(__instance, 2 + __instance.timesUpgraded);
+                    } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+                        e.printStackTrace();
+                    }
+                    __instance.timesUpgraded += 1;
                     __instance.upgraded = true;
-                    __instance.timesUpgraded++;
-                    __instance.name = Shiv.NAME + "+" + __instance.timesUpgraded;
+
+                    __instance.name = cardStringsForShiv.NAME + "+" + __instance.timesUpgraded;
+
+                    try {
+                        Method whyIsThisMethodProtectedToo = AbstractCard.class.getDeclaredMethod("initializeTitle");
+                        whyIsThisMethodProtectedToo.setAccessible(true);
+                        whyIsThisMethodProtectedToo.invoke(__instance);
+                    } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+                        e.printStackTrace();
+                    }
+
                     return SpireReturn.Return(null);
                 }
             }
             return SpireReturn.Continue();
         }
+    }
+
+    @SpirePatch(
+            clz = Shiv.class,
+            method = "makeCopy"
+    )
+    public static class copyTheThingCorrectly
+    {
+        @SpirePostfixPatch
+        public static AbstractCard whySoManyPatches(AbstractCard __result, Shiv __instance)
+        {
+            __result.timesUpgraded = __instance.timesUpgraded;
+            return __result;
+        }
+    }
+
+    static {
+        cardStringsForShiv = CardCrawlGame.languagePack.getCardStrings("Shiv");
     }
 }
 
